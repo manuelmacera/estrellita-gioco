@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dove sono finiti i dinosauri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "title": {
+  "it": "Dove sono finiti i <mark>dinosauri</mark>?",
+  "es": "¿Qué pasó con los <mark>dinosaurios</mark>?"
+ },
+ "parts": [
+  {
+   "type": "choice",
+   "name": {
+    "it": "Le ipotesi",
+    "es": "Las hipótesis"
+   },
+   "intro": {
+    "it": "Guarda il disegno: quale ipotesi racconta?",
+    "es": "Mirá el dibujo: ¿qué hipótesis cuenta?"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Quale ipotesi è questa?",
+      "es": "¿Qué hipótesis es esta?"
+     },
+     "img": "img/ext_meteor.jpg",
+     "options": [
+      {
+       "it": "Un grande meteorite colpì la Terra",
+       "es": "Un gran meteorito chocó contra la Tierra"
+      },
+      {
+       "it": "Il clima cambiò: faceva troppo freddo",
+       "es": "El clima cambió: hacía demasiado frío"
+      },
+      {
+       "it": "Grandi eruzioni vulcaniche e terremoti",
+       "es": "Grandes erupciones volcánicas y terremotos"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La polvere coprì il Sole: senza luce e calore le piante morirono e i dinosauri rimasero senza cibo.",
+      "es": "El polvo tapó el Sol: sin luz ni calor las plantas murieron y los dinosaurios se quedaron sin comida."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Quale ipotesi è questa?",
+      "es": "¿Qué hipótesis es esta?"
+     },
+     "img": "img/ext_cold.jpg",
+     "options": [
+      {
+       "it": "Un grande meteorite colpì la Terra",
+       "es": "Un gran meteorito chocó contra la Tierra"
+      },
+      {
+       "it": "Il clima cambiò: faceva troppo freddo",
+       "es": "El clima cambió: hacía demasiado frío"
+      },
+      {
+       "it": "Grandi eruzioni vulcaniche e terremoti",
+       "es": "Grandes erupciones volcánicas y terremotos"
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Con il freddo i dinosauri non trovavano il cibo per sopravvivere.",
+      "es": "Con el frío los dinosaurios no encontraban comida para sobrevivir."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Quale ipotesi è questa?",
+      "es": "¿Qué hipótesis es esta?"
+     },
+     "img": "img/ext_volc.jpg",
+     "options": [
+      {
+       "it": "Un grande meteorite colpì la Terra",
+       "es": "Un gran meteorito chocó contra la Tierra"
+      },
+      {
+       "it": "Il clima cambiò: faceva troppo freddo",
+       "es": "El clima cambió: hacía demasiado frío"
+      },
+      {
+       "it": "Grandi eruzioni vulcaniche e terremoti",
+       "es": "Grandes erupciones volcánicas y terremotos"
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Vulcani e terremoti avrebbero sconvolto il pianeta.",
+      "es": "Los volcanes y los terremotos habrían sacudido todo el planeta."
+     }
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Possibile o no?",
+    "es": "¿Posible o no?"
+   },
+   "intro": {
+    "it": "È una vera ipotesi degli scienziati, o è impossibile?",
+    "es": "¿Es una hipótesis de verdad de los científicos, o es imposible?"
+   },
+   "bins": [
+    {
+     "it": "Impossibile!",
+     "es": "¡Imposible!"
+    },
+    {
+     "it": "Ipotesi possibile",
+     "es": "Hipótesis posible"
+    }
+   ],
+   "items": [
+    {
+     "label": {
+      "it": "Un grande meteorite colpì la Terra e la polvere coprì il Sole.",
+      "es": "Un gran meteorito chocó contra la Tierra y el polvo tapó el Sol."
+     },
+     "short": {
+      "it": "meteorite",
+      "es": "meteorito"
+     },
+     "bin": 1
+    },
+    {
+     "label": {
+      "it": "Faceva troppo freddo e non c'era più cibo.",
+      "es": "Hacía demasiado frío y ya no había comida."
+     },
+     "short": {
+      "it": "freddo",
+      "es": "frío"
+     },
+     "bin": 1
+    },
+    {
+     "label": {
+      "it": "Ci furono enormi eruzioni vulcaniche e terremoti.",
+      "es": "Hubo enormes erupciones volcánicas y terremotos."
+     },
+     "short": {
+      "it": "vulcani",
+      "es": "volcanes"
+     },
+     "bin": 1
+    },
+    {
+     "label": {
+      "it": "Le piante morirono e i dinosauri rimasero senza cibo.",
+      "es": "Las plantas murieron y los dinosaurios se quedaron sin comida."
+     },
+     "short": {
+      "it": "senza cibo",
+      "es": "sin comida"
+     },
+     "bin": 1
+    },
+    {
+     "label": {
+      "it": "Gli esseri umani li cacciarono tutti.",
+      "es": "Los seres humanos los cazaron a todos."
+     },
+     "short": {
+      "it": "umani",
+      "es": "humanos"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Impossibile: gli esseri umani sono arrivati molto, molto tempo dopo!",
+      "es": "¡Imposible: los seres humanos llegaron muchísimo tiempo después!"
+     }
+    },
+    {
+     "label": {
+      "it": "Partirono con un razzo verso la Luna.",
+      "es": "Se fueron en un cohete a la Luna."
+     },
+     "short": {
+      "it": "razzo",
+      "es": "cohete"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Impossibile: i razzi li hanno inventati gli esseri umani, tantissimo tempo dopo!",
+      "es": "¡Imposible: los cohetes los inventaron los seres humanos, muchísimo tiempo después!"
+     }
+    },
+    {
+     "label": {
+      "it": "Si trasformarono tutti in pesci.",
+      "es": "Se convirtieron todos en peces."
+     },
+     "short": {
+      "it": "pesci",
+      "es": "peces"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Impossibile: i pesci c'erano già da tantissimo tempo!",
+      "es": "¡Imposible: los peces ya existían desde hacía muchísimo tiempo!"
+     }
+    }
+   ]
+  },
+  {
+   "type": "model",
+   "name": {
+    "it": "Nel compito",
+    "es": "En la prueba"
+   },
+   "intro": {
+    "it": "Ecco come puoi rispondere nel compito.",
+    "es": "Así podés contestar en la prueba."
+   },
+   "blocks": [
+    {
+     "q": {
+      "it": "6. Scrivi almeno due ipotesi sulla scomparsa dei dinosauri",
+      "es": "6. Escribí al menos dos hipótesis sobre la desaparición de los dinosaurios"
+     },
+     "lines": {
+      "it": [
+       "1 - Un grande meteorite colpì la Terra e i dinosauri rimasero senza cibo.",
+       "2 - Il clima cambiò e faceva troppo freddo.",
+       "3 - Ci furono grandi eruzioni vulcaniche e terremoti."
+      ],
+      "es": [
+       "1 - Un gran meteorito chocó contra la Tierra y los dinosaurios se quedaron sin comida.",
+       "2 - El clima cambió y hacía demasiado frío.",
+       "3 - Hubo grandes erupciones volcánicas y terremotos."
+      ]
+     }
+    },
+    {
+     "img": "img/ext_birds.jpg",
+     "q": {
+      "it": "4. Una cosa interessante (idea!)",
+      "es": "4. Algo interesante (¡idea!)"
+     },
+     "lines": {
+      "it": [
+       "Gli uccelli discendono dai dinosauri: sono i loro nipotini!"
+      ],
+      "es": [
+       "Las aves descienden de los dinosaurios: ¡son sus nietitos!"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

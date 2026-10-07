@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dinosauri padroni della Terra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "title": {
+  "it": "Dinosauri, <mark>padroni</mark> della Terra",
+  "es": "Dinosaurios, <mark>dueños</mark> de la Tierra"
+ },
+ "parts": [
+  {
+   "type": "choice",
+   "name": {
+    "it": "Indovina chi",
+    "es": "Adiviná quién"
+   },
+   "fixedOptions": true,
+   "intro": {
+    "it": "Leggi l'indizio e tocca il dinosauro giusto.",
+    "es": "Leé la pista y tocá el dinosaurio correcto."
+   },
+   "items": [
+    {
+     "prompt": {
+      "it": "Potevo volare e mangiavo soprattutto pesce.",
+      "es": "Podía volar y comía sobre todo pescado."
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Avevo una grande testa con tre corni e un becco.",
+      "es": "Tenía una cabeza enorme con tres cuernos y un pico."
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 3
+    },
+    {
+     "prompt": {
+      "it": "Vivevo nelle profondità dei mari e dei laghi.",
+      "es": "Vivía en lo profundo de los mares y los lagos."
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "prompt": {
+      "it": "Avevo un collo lunghissimo: ero uno degli animali più grandi mai esistiti!",
+      "es": "¡Tenía un cuello larguísimo: fui uno de los animales más grandes que existieron!"
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 4
+    },
+    {
+     "prompt": {
+      "it": "Ero uno dei più grandi predatori mai esistiti: mangiavo carne.",
+      "es": "Fui uno de los predadores más grandes que existieron: comía carne."
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "prompt": {
+      "it": "Avevo una cresta con un osso a tubo, per comunicare.",
+      "es": "Tenía una cresta con un hueso en forma de tubo, para comunicarme."
+     },
+     "options": [
+      {
+       "img": "img/dino1.jpg",
+       "label": {
+        "it": "Tirannosauro",
+        "es": "Tiranosaurio"
+       }
+      },
+      {
+       "img": "img/dino2.jpg",
+       "label": {
+        "it": "Pterodattilo",
+        "es": "Pterodáctilo"
+       }
+      },
+      {
+       "img": "img/dino3.jpg",
+       "label": {
+        "it": "Plesiosauro",
+        "es": "Plesiosaurio"
+       }
+      },
+      {
+       "img": "img/dino4.jpg",
+       "label": {
+        "it": "Triceratopo",
+        "es": "Tricerátops"
+       }
+      },
+      {
+       "img": "img/dino5.jpg",
+       "label": {
+        "it": "Brachiosauro",
+        "es": "Braquiosaurio"
+       }
+      },
+      {
+       "img": "img/dino6.jpg",
+       "label": {
+        "it": "Parasaurolofo",
+        "es": "Parasaurolofo"
+       }
+      }
+     ],
+     "answer": 5
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Attacco o difesa?",
+    "es": "¿Ataque o defensa?"
+   },
+   "intro": {
+    "it": "Questa parte del corpo serviva per attaccare o per difendersi?",
+    "es": "¿Esta parte del cuerpo servía para atacar o para defenderse?"
+   },
+   "bins": [
+    {
+     "it": "Attacco",
+     "es": "Ataque"
+    },
+    {
+     "it": "Difesa",
+     "es": "Defensa"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/dino1.jpg",
+     "label": {
+      "it": "I denti affilati del Tirannosauro",
+      "es": "Los dientes filosos del Tiranosaurio"
+     },
+     "short": {
+      "it": "denti del Tirannosauro",
+      "es": "dientes del Tiranosaurio"
+     },
+     "bin": 0
+    },
+    {
+     "img": "img/dino4.jpg",
+     "label": {
+      "it": "I tre corni del Triceratopo",
+      "es": "Los tres cuernos del Tricerátops"
+     },
+     "short": {
+      "it": "corni del Triceratopo",
+      "es": "cuernos del Tricerátops"
+     },
+     "bin": 1
+    },
+    {
+     "img": "img/dino3.jpg",
+     "label": {
+      "it": "I denti appuntiti del Plesiosauro, per acchiappare i pesci",
+      "es": "Los dientes puntiagudos del Plesiosaurio, para atrapar peces"
+     },
+     "short": {
+      "it": "denti del Plesiosauro",
+      "es": "dientes del Plesiosaurio"
+     },
+     "bin": 0
+    },
+    {
+     "img": "img/dino2.jpg",
+     "label": {
+      "it": "Le ali dello Pterodattilo, per scappare volando",
+      "es": "Las alas del Pterodáctilo, para escapar volando"
+     },
+     "short": {
+      "it": "ali dello Pterodattilo",
+      "es": "alas del Pterodáctilo"
+     },
+     "bin": 1
+    },
+    {
+     "img": "img/dino6.jpg",
+     "label": {
+      "it": "La cresta del Parasaurolofo, per avvisare gli amici del pericolo",
+      "es": "La cresta del Parasaurolofo, para avisar a sus amigos del peligro"
+     },
+     "short": {
+      "it": "cresta del Parasaurolofo",
+      "es": "cresta del Parasaurolofo"
+     },
+     "bin": 1
+    },
+    {
+     "img": "img/dino1.jpg",
+     "label": {
+      "it": "Le mascelle fortissime del Tirannosauro",
+      "es": "Las mandíbulas fortísimas del Tiranosaurio"
+     },
+     "short": {
+      "it": "mascelle del Tirannosauro",
+      "es": "mandíbulas del Tiranosaurio"
+     },
+     "bin": 0
+    },
+    {
+     "img": "img/dino5.jpg",
+     "label": {
+      "it": "La grandezza enorme del Brachiosauro",
+      "es": "El tamaño enorme del Braquiosaurio"
+     },
+     "short": {
+      "it": "grandezza del Brachiosauro",
+      "es": "tamaño del Braquiosaurio"
+     },
+     "bin": 1
+    }
+   ],
+   "after": [
+    {
+     "q": {
+      "it": "3. Come potevano difendersi o attaccare? Fai due esempi",
+      "es": "3. ¿Cómo podían defenderse o atacar? Da dos ejemplos"
+     },
+     "lines": {
+      "it": [
+       "1 - Il Tirannosauro attaccava con i denti affilati e le mascelle fortissime.",
+       "2 - Il Triceratopo si difendeva con i suoi tre corni."
+      ],
+      "es": [
+       "1 - El Tiranosaurio atacaba con sus dientes filosos y sus mandíbulas fortísimas.",
+       "2 - El Tricerátops se defendía con sus tres cuernos."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Cosa mangiava?",
+    "es": "¿Qué comía?"
+   },
+   "fixedOptions": true,
+   "intro": {
+    "it": "Carne, pesce o piante?",
+    "es": "¿Carne, pescado o plantas?"
+   },
+   "items": [
+    {
+     "prompt": {
+      "it": "Tirannosauro",
+      "es": "Tiranosaurio"
+     },
+     "img": "img/dino1.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "prompt": {
+      "it": "Pterodattilo",
+      "es": "Pterodáctilo"
+     },
+     "img": "img/dino2.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Plesiosauro",
+      "es": "Plesiosaurio"
+     },
+     "img": "img/dino3.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Triceratopo",
+      "es": "Tricerátops"
+     },
+     "img": "img/dino4.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "prompt": {
+      "it": "Brachiosauro",
+      "es": "Braquiosaurio"
+     },
+     "img": "img/dino5.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "prompt": {
+      "it": "Parasaurolofo",
+      "es": "Parasaurolofo"
+     },
+     "img": "img/dino6.jpg",
+     "options": [
+      {
+       "it": "Carne",
+       "es": "Carne"
+      },
+      {
+       "it": "Pesce",
+       "es": "Pescado"
+      },
+      {
+       "it": "Piante",
+       "es": "Plantas"
+      }
+     ],
+     "answer": 2
+    }
+   ]
+  },
+  {
+   "type": "pick",
+   "name": {
+    "it": "Il mio preferito",
+    "es": "Mi preferido"
+   },
+   "intro": {
+    "it": "Qual è il tuo dinosauro preferito? Toccalo!",
+    "es": "¿Cuál es tu dinosaurio preferido? ¡Tocalo!"
+   },
+   "options": [
+    {
+     "img": "img/dino1.jpg",
+     "label": {
+      "it": "Tirannosauro",
+      "es": "Tiranosaurio"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è il Tirannosauro.",
+       "Era uno dei più grandi predatori mai esistiti.",
+       "Mangiava carne e attaccava con i denti affilati.",
+       "Misurava 6 metri."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Tiranosaurio.",
+       "Era uno de los predadores más grandes que existieron.",
+       "Comía carne y atacaba con sus dientes filosos.",
+       "Medía 6 metros."
+      ]
+     }
+    },
+    {
+     "img": "img/dino2.jpg",
+     "label": {
+      "it": "Pterodattilo",
+      "es": "Pterodáctilo"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è lo Pterodattilo.",
+       "Poteva volare.",
+       "Mangiava soprattutto pesce, che pescava con il becco.",
+       "Misurava 1 metro."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Pterodáctilo.",
+       "Podía volar.",
+       "Comía sobre todo pescado, que pescaba con el pico.",
+       "Medía 1 metro."
+      ]
+     }
+    },
+    {
+     "img": "img/dino3.jpg",
+     "label": {
+      "it": "Plesiosauro",
+      "es": "Plesiosaurio"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è il Plesiosauro.",
+       "Viveva nelle profondità dei mari e dei laghi.",
+       "Nuotava con quattro pinne e mangiava pesce.",
+       "Misurava 15 metri."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Plesiosaurio.",
+       "Vivía en lo profundo de los mares y los lagos.",
+       "Nadaba con cuatro aletas y comía peces.",
+       "Medía 15 metros."
+      ]
+     }
+    },
+    {
+     "img": "img/dino4.jpg",
+     "label": {
+      "it": "Triceratopo",
+      "es": "Tricerátops"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è il Triceratopo.",
+       "Aveva una grande testa con tre corni e una bocca con un becco.",
+       "Mangiava piante e si difendeva con i corni.",
+       "Misurava 9 metri."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Tricerátops.",
+       "Tenía una cabeza enorme con tres cuernos y una boca con pico.",
+       "Comía plantas y se defendía con los cuernos.",
+       "Medía 9 metros."
+      ]
+     }
+    },
+    {
+     "img": "img/dino5.jpg",
+     "label": {
+      "it": "Brachiosauro",
+      "es": "Braquiosaurio"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è il Brachiosauro.",
+       "Era uno degli animali più grandi mai esistiti e aveva un lungo collo.",
+       "Mangiava le foglie in cima agli alberi.",
+       "Misurava 30 metri."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Braquiosaurio.",
+       "Fue uno de los animales más grandes que existieron y tenía un cuello largo.",
+       "Comía las hojas de lo alto de los árboles.",
+       "Medía 30 metros."
+      ]
+     }
+    },
+    {
+     "img": "img/dino6.jpg",
+     "label": {
+      "it": "Parasaurolofo",
+      "es": "Parasaurolofo"
+     },
+     "model": {
+      "it": [
+       "Il mio dinosauro preferito è il Parasaurolofo.",
+       "Aveva una cresta con un osso a tubo, che usava per comunicare.",
+       "Mangiava piante.",
+       "Misurava 11 metri."
+      ],
+      "es": [
+       "Mi dinosaurio preferido es el Parasaurolofo.",
+       "Tenía una cresta con un hueso en forma de tubo, que usaba para comunicarse.",
+       "Comía plantas.",
+       "Medía 11 metros."
+      ]
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le ere della Terra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "title": {
+  "it": "Le <mark>ere</mark> della Terra",
+  "es": "Las <mark>eras</mark> de la Tierra"
+ },
+ "parts": [
+  {
+   "type": "order",
+   "name": {
+    "it": "In ordine",
+    "es": "En orden"
+   },
+   "intro": {
+    "it": "Metti le ere in ordine: dalla più antica alla più recente.",
+    "es": "Ordená las eras: de la más antigua a la más reciente."
+   },
+   "items": [
+    {
+     "img": "img/era1.jpg",
+     "label": {
+      "it": "Arcaica",
+      "es": "Arcaica"
+     }
+    },
+    {
+     "img": "img/era2.jpg",
+     "label": {
+      "it": "Primaria (Paleozoica)",
+      "es": "Primaria (Paleozoica)"
+     }
+    },
+    {
+     "img": "img/era3.jpg",
+     "label": {
+      "it": "Secondaria (Mesozoica)",
+      "es": "Secundaria (Mesozoica)"
+     }
+    },
+    {
+     "img": "img/era4.jpg",
+     "label": {
+      "it": "Terziaria (Cenozoica)",
+      "es": "Terciaria (Cenozoica)"
+     }
+    },
+    {
+     "img": "img/era5.jpg",
+     "label": {
+      "it": "Quaternaria (Neozoica)",
+      "es": "Cuaternaria (Neozoica)"
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Chi viveva qui?",
+    "es": "¿Quién vivía acá?"
+   },
+   "fixedOptions": true,
+   "intro": {
+    "it": "In quale era sono comparsi?",
+    "es": "¿En qué era aparecieron?"
+   },
+   "items": [
+    {
+     "prompt": {
+      "it": "Le prime forme di vita, nell'acqua",
+      "es": "Las primeras formas de vida, en el agua"
+     },
+     "img": "img/q2_1.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Era Arcaica: le prime forme di vita, nell'acqua.",
+      "es": "Era Arcaica: las primeras formas de vida, en el agua."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli invertebrati, come le meduse",
+      "es": "Los invertebrados, como las medusas"
+     },
+     "img": "img/jelly.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Era Primaria o Paleozoica: invertebrati, pesci e anfibi.",
+      "es": "Era Primaria o Paleozoica: invertebrados, peces y anfibios."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I pesci",
+      "es": "Los peces"
+     },
+     "img": "img/q2_2.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Era Primaria o Paleozoica: invertebrati, pesci e anfibi.",
+      "es": "Era Primaria o Paleozoica: invertebrados, peces y anfibios."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli anfibi",
+      "es": "Los anfibios"
+     },
+     "img": "img/q2_3.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Era Primaria o Paleozoica: invertebrati, pesci e anfibi.",
+      "es": "Era Primaria o Paleozoica: invertebrados, peces y anfibios."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I rettili e i dinosauri",
+      "es": "Los reptiles y los dinosaurios"
+     },
+     "img": "img/q2_5.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Era Secondaria o Mesozoica: rettili, dinosauri e piccoli mammiferi.",
+      "es": "Era Secundaria o Mesozoica: reptiles, dinosaurios y pequeños mamíferos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I piccoli mammiferi",
+      "es": "Los pequeños mamíferos"
+     },
+     "img": "img/q2_6.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Era Secondaria o Mesozoica: rettili, dinosauri e piccoli mammiferi.",
+      "es": "Era Secundaria o Mesozoica: reptiles, dinosaurios y pequeños mamíferos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I primi ominidi (e i dinosauri si estinguono)",
+      "es": "Los primeros homínidos (y los dinosaurios se extinguen)"
+     },
+     "img": "img/hominid.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Era Terziaria o Cenozoica: si estinguono i dinosauri e compaiono i primi ominidi.",
+      "es": "Era Terciaria o Cenozoica: se extinguen los dinosaurios y aparecen los primeros homínidos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "L'evoluzione dell'uomo, fino a oggi",
+      "es": "La evolución del ser humano, hasta hoy"
+     },
+     "img": "img/q2_7.jpg",
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 4,
+     "explain": {
+      "it": "Era Quaternaria o Neozoica: da 2 milioni di anni fa a oggi.",
+      "es": "Era Cuaternaria o Neozoica: desde hace 2 millones de años hasta hoy."
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "I nomi",
+    "es": "Los nombres"
+   },
+   "intro": {
+    "it": "Ogni era ha due nomi. Li sai?",
+    "es": "Cada era tiene dos nombres. ¿Los sabés?"
+   },
+   "items": [
+    {
+     "prompt": {
+      "it": "L'Era Primaria si chiama anche...",
+      "es": "La Era Primaria también se llama..."
+     },
+     "options": [
+      "Paleozoica",
+      "Mesozoica",
+      "Cenozoica",
+      "Neozoica"
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Paleo = antica.",
+      "es": "Paleo = antigua."
+     }
+    },
+    {
+     "prompt": {
+      "it": "L'Era Secondaria si chiama anche...",
+      "es": "La Era Secundaria también se llama..."
+     },
+     "options": [
+      "Paleozoica",
+      "Mesozoica",
+      "Cenozoica",
+      "Neozoica"
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Meso = in mezzo.",
+      "es": "Meso = del medio."
+     }
+    },
+    {
+     "prompt": {
+      "it": "L'Era Terziaria si chiama anche...",
+      "es": "La Era Terciaria también se llama..."
+     },
+     "options": [
+      "Paleozoica",
+      "Mesozoica",
+      "Cenozoica",
+      "Neozoica"
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Ceno = nuova.",
+      "es": "Ceno = nueva."
+     }
+    },
+    {
+     "prompt": {
+      "it": "L'Era Quaternaria si chiama anche...",
+      "es": "La Era Cuaternaria también se llama..."
+     },
+     "options": [
+      "Paleozoica",
+      "Mesozoica",
+      "Cenozoica",
+      "Neozoica"
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Neo = nuova: è l'era di oggi!",
+      "es": "Neo = nueva: ¡es la era de hoy!"
+     }
+    },
+    {
+     "prompt": {
+      "it": "Qual è l'era più antica?",
+      "es": "¿Cuál es la era más antigua?"
+     },
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Arcaica vuol dire antichissima.",
+      "es": "Arcaica quiere decir antiquísima."
+     }
+    },
+    {
+     "prompt": {
+      "it": "In quale era viviamo oggi?",
+      "es": "¿En qué era vivimos hoy?"
+     },
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 4,
+     "explain": {
+      "it": "Era Quaternaria o Neozoica: da 2 milioni di anni fa a oggi.",
+      "es": "Era Cuaternaria o Neozoica: desde hace 2 millones de años hasta hoy."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Quale era è \"l'era dei dinosauri\"?",
+      "es": "¿Cuál es \"la era de los dinosaurios\"?"
+     },
+     "options": [
+      {
+       "it": "Arcaica",
+       "es": "Arcaica"
+      },
+      {
+       "it": "Primaria (Paleozoica)",
+       "es": "Primaria (Paleozoica)"
+      },
+      {
+       "it": "Secondaria (Mesozoica)",
+       "es": "Secundaria (Mesozoica)"
+      },
+      {
+       "it": "Terziaria (Cenozoica)",
+       "es": "Terciaria (Cenozoica)"
+      },
+      {
+       "it": "Quaternaria (Neozoica)",
+       "es": "Cuaternaria (Neozoica)"
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Era Secondaria o Mesozoica: da 250 a 70 milioni di anni fa.",
+      "es": "Era Secundaria o Mesozoica: de 250 a 70 millones de años atrás."
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>
