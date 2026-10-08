@@ -234,6 +234,10 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
       <p class="bubble" id="msg" role="status" aria-live="polite"></p>
     </div>
   </header>
+  <details id="vbox" open style="background:var(--sky-2);border-radius:18px;padding:10px 12px">
+    <summary id="vsum" style="font:600 1.15rem var(--display);color:var(--star-soft);cursor:pointer;padding:4px 2px"></summary>
+    <video id="vid" controls playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;margin-top:10px;border-radius:12px;background:#000;border:3px solid var(--ink)"></video>
+  </details>
 
   <div class="controls">
     <div class="seg" role="group" aria-label="Attività / Actividad">
@@ -484,6 +488,9 @@ function check() {
 function render() {
   const t = tr();
   document.documentElement.lang = S.lang;
+  { const src = `videos/${S.act}_${S.lang}.mp4`, v = $('vid');
+    $('vsum').textContent = S.lang === 'es' ? 'Mirá el video' : 'Guarda il video';
+    if (v.getAttribute('src') !== src) { v.setAttribute('src', src); v.setAttribute('poster', src.replace('.mp4', '.jpg')); } }
   $('back-menu').textContent = S.lang === 'es' ? '← Menú' : '← Menu';
   $('title').innerHTML = t.title;
   const m = S.msg || { key: 'start' };

@@ -129,4 +129,10 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
   .opt.no, .bin.no, .chip.no, .card, .item, .mascot.jump { animation: none; }
 }
 
+/* embedded video */
+.vbox { background: var(--sky-2); border-radius: 18px; padding: 10px 12px; }
+.vbox summary { font: 600 1.15rem var(--display); color: var(--star-soft); cursor: pointer; padding: 4px 2px; }
+.vbox summary:focus-visible { outline: 3px solid var(--star); outline-offset: 3px; border-radius: 8px; }
+.vbox video { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 10px; border-radius: 12px; background: #000; border: 3px solid var(--ink); }
+
 [hidden] { display: none !important; }

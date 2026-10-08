@@ -77,6 +77,7 @@
           <img class="mascot" id="mascot" src="img/mascot.png" alt="">
           <div><h1 id="title"></h1><p class="bubble" id="msg" role="status" aria-live="polite"></p></div>
         </header>
+        <details class="vbox" id="vbox" open hidden><summary id="vsum"></summary><video id="vid" controls playsinline preload="metadata"></video></details>
         <div class="seg" role="group" id="parts"></div>
         <section class="board" id="stage"></section>
       </div>`);
@@ -93,6 +94,12 @@
       document.documentElement.lang = S.lang;
       $('back').textContent = U().menu;
       $('title').innerHTML = L(PAGE.title);
+      if (PAGE.video) {
+        const src = PAGE.video[S.lang], v = $('vid');
+        $('vbox').hidden = false;
+        $('vsum').textContent = S.lang === 'es' ? 'Mirá el video' : 'Guarda il video';
+        if (v.getAttribute('src') !== src) { v.setAttribute('src', src); v.setAttribute('poster', src.replace('.mp4', '.jpg')); }
+      }
       ['it', 'es'].forEach(l => $('lang-' + l).setAttribute('aria-pressed', String(S.lang === l)));
       $('stars-n').textContent = S.stars;
       $('parts').innerHTML = PAGE.parts.map((p, i) => `<button type="button" data-i="${i}" aria-pressed="${i === S.part}">${i + 1} · ${esc(L(p.name))}</button>`).join('');
