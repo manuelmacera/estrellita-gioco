@@ -128,3 +128,5 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
 @media (prefers-reduced-motion: reduce) {
   .opt.no, .bin.no, .chip.no, .card, .item, .mascot.jump { animation: none; }
 }
+
+[hidden] { display: none !important; }
