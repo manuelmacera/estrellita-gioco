@@ -39,6 +39,10 @@ body {
 .wrap { max-width: 1000px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 48px; display: grid; gap: 18px; }
 .topbar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
 .back { font: 600 1rem var(--display); color: var(--muted); text-decoration: none; background: var(--sky-2); border-radius: 999px; padding: 8px 14px; }
+.voice-btn { width: 42px; height: 42px; border: 0; border-radius: 50%; background: var(--sky-2); color: var(--star-soft); cursor: pointer; display: grid; place-items: center; padding: 0; }
+.voice-btn[aria-pressed="false"] { color: var(--muted); }
+.voice-btn svg { width: 24px; height: 24px; }
+.voice-btn:focus-visible { outline: 3px solid var(--star); outline-offset: 3px; }
 .back:focus-visible { outline: 3px solid var(--star); outline-offset: 3px; }
 header.hero { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; }
 .mascot { width: 88px; height: 88px; }

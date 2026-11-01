@@ -1,4 +1,5 @@
-/* Stellina activity engine: choice, sort, fill, order, pick and model parts, in Italian or Spanish. */
+/* Stellina activity engine: choice, sort, fill, order, pick and model parts, in Italian or Spanish.
+   Feedback (praise, try again, explanations) is also spoken by Stellina through voice.js when it is loaded. */
 (function () {
   const UI = {
     it: {
@@ -86,6 +87,14 @@
       $('msg').textContent = text;
       $('msg').className = 'bubble' + (kind ? ' ' + kind : '');
     }
+    // spoken feedback: the bubble text, then any explanation
+    function talk(...lines) { if (window.Voice) Voice.say(lines, S.lang); }
+    if (window.Voice) {
+      const vb = Voice.button(() => S.lang === 'es' ? 'Voz de Estrellita' : 'Voce di Stellina');
+      document.querySelector('.topbar .seg').after(vb);
+      S.vb = vb;
+      $('vid').addEventListener('play', () => Voice.stop());
+    }
     function jump(wow) {
       const m = $('mascot'); m.src = wow ? 'img/mascot-wow.png' : 'img/mascot.png';
       m.classList.remove('jump'); void m.offsetWidth; m.classList.add('jump');
@@ -102,6 +111,7 @@
       }
       ['it', 'es'].forEach(l => $('lang-' + l).setAttribute('aria-pressed', String(S.lang === l)));
       $('stars-n').textContent = S.stars;
+      if (S.vb) S.vb.repaint();
       $('parts').innerHTML = PAGE.parts.map((p, i) => `<button type="button" data-i="${i}" aria-pressed="${i === S.part}">${i + 1} · ${esc(L(p.name))}</button>`).join('');
       $('parts').querySelectorAll('button').forEach(b => b.addEventListener('click', () => startPart(+b.dataset.i)));
     }
@@ -112,7 +122,7 @@
     function finish() {
       const st = S.st, p = PAGE.parts[S.part];
       addStar(); sWin(); confetti(); jump(true);
-      say(U().done, 'good');
+      say(U().done, 'good'); talk(U().done);
       const hasScore = st.total > 0;
       const nextBtn = S.part < PAGE.parts.length - 1 ? `<button type="button" class="btn" id="nextpart">${U().nextPart}</button>` : `<a class="btn" href="index.html">${U().menu}</a>`;
       $('stage').innerHTML = `<div class="finish"><div class="big">★</div><h2>${U().done}</h2>${hasScore ? `<p class="prompt">${U().score(st.first, st.total)}</p>` : ''}${p.after ? `<div class="paper" style="text-align:left;justify-self:stretch">${p.after.map(b => `<p class="q">${esc(L(b.q))}</p>${L(b.lines).map(l => `<p>${esc(l)}</p>`).join('')}`).join('')}</div>` : ''}<div class="actions"><button type="button" class="btn secondary" id="again">${U().again}</button>${nextBtn}</div></div>`;
@@ -159,14 +169,16 @@
           if (!st.wrong) st.first += 1;
           if (p.type === 'choice') { b.classList.add('ok'); $('stage').querySelectorAll('.opt').forEach(o => o.disabled = true); }
           else { st.binsFill[k].push(it.short || it.label); b.insertAdjacentHTML('beforeend', `<span class="mini">${esc(L(it.short || it.label))}</span>`); }
-          sOk(); jump(true); say(pickOne(U().ok), 'good');
+          const ok = pickOne(U().ok);
+          sOk(); jump(true); say(ok, 'good'); talk(ok, it.explain && L(it.explain));
           if (it.explain) { $('explain').hidden = false; $('explain').textContent = L(it.explain); }
           $('next').hidden = false; $('next').focus();
         } else {
           st.wrong = true; sNo();
           b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
           if (p.type === 'choice') b.disabled = true;
-          say(pickOne(U().retry), 'bad');
+          const retry = pickOne(U().retry);
+          say(retry, 'bad'); talk(retry);
         }
       }));
       st.solved = false;
@@ -195,12 +207,14 @@
           if (!st.wrong) st.first += 1;
           $('blank').textContent = L(it.answer); $('blank').classList.add('ok');
           st.bank = st.bank.filter(x => x !== k);
-          b.remove(); sOk(); jump(true); say(pickOne(U().ok), 'good');
+          const ok = pickOne(U().ok);
+          b.remove(); sOk(); jump(true); say(ok, 'good'); talk(ok);
           $('stage').querySelectorAll('.chip').forEach(c => c.disabled = true);
           setTimeout(() => { st.i += 1; renderFill(p); }, 1300);
         } else {
           st.wrong = true; sNo(); b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
-          say(pickOne(U().retry), 'bad');
+          const retry = pickOne(U().retry);
+          say(retry, 'bad'); talk(retry);
         }
       }));
     }
@@ -237,7 +251,7 @@
         const wrong = [];
         st.slots.forEach((k, i) => { if (k === i) st.locked[i] = true; else wrong.push(i); });
         if (!wrong.length) return finish();
-        sNo(); say(U().orderWrong(wrong.length), 'bad');
+        sNo(); say(U().orderWrong(wrong.length), 'bad'); talk(U().orderWrong(wrong.length));
         $('stage').querySelectorAll('.slot').forEach((el, i) => { if (wrong.includes(i)) { const c = el.querySelector('.card'); if (c) c.classList.add('no'); } });
         setTimeout(() => { wrong.forEach(i => { st.pool.push(st.slots[i]); st.slots[i] = null; }); st.pool = shuffle(st.pool); renderOrder(p, true); }, 1300);
       });
@@ -267,6 +281,7 @@
 
     function startPart(i) {
       S.part = i; chrome();
+      if (window.Voice) Voice.stop();
       const p = PAGE.parts[i];
       ({ choice: startQuiz, sort: startQuiz, fill: startFill, order: startOrder, pick: startPick, model: startModel })[p.type](p);
       window.scrollTo({ top: 0, behavior: 'smooth' });
