@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gli invertebrati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an4_it.mp4",
+  "es": "videos/an4_es.mp4"
+ },
+ "title": {
+  "it": "Gli <mark>invertebrati</mark>",
+  "es": "Los <mark>invertebrados</mark>"
+ },
+ "parts": [
+  {
+   "type": "sort",
+   "name": {
+    "it": "I 5 gruppi",
+    "es": "Los 5 grupos"
+   },
+   "intro": {
+    "it": "In che gruppo sta? Tocca la scatola giusta.",
+    "es": "¿En qué grupo está? Tocá la caja correcta."
+   },
+   "bins": [
+    {
+     "it": "Insetti",
+     "es": "Insectos"
+    },
+    {
+     "it": "Crostacei",
+     "es": "Crustáceos"
+    },
+    {
+     "it": "Molluschi",
+     "es": "Moluscos"
+    },
+    {
+     "it": "Aracnidi",
+     "es": "Arácnidos"
+    },
+    {
+     "it": "Vermi",
+     "es": "Gusanos"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_formica.jpg",
+     "label": {
+      "it": "Formica",
+      "es": "Hormiga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La formica è un insetto: ha 6 zampe e le antenne.",
+      "es": "La hormiga es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "label": {
+      "it": "Ape",
+      "es": "Abeja"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'ape è un insetto: ha 6 zampe e le antenne.",
+      "es": "La abeja es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "label": {
+      "it": "Farfalla",
+      "es": "Mariposa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La farfalla è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mariposa es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_coccinella.jpg",
+     "label": {
+      "it": "Coccinella",
+      "es": "Vaquita de San Antonio"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La coccinella è un insetto: ha 6 zampe e le antenne.",
+      "es": "La vaquita de San Antonio es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_grillo.jpg",
+     "label": {
+      "it": "Grillo",
+      "es": "Grillo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il grillo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El grillo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_mosca.jpg",
+     "label": {
+      "it": "Mosca",
+      "es": "Mosca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mosca è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mosca es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_scarabeo.jpg",
+     "label": {
+      "it": "Scarabeo",
+      "es": "Escarabajo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Lo scarabeo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El escarabajo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_zanzara.jpg",
+     "label": {
+      "it": "Zanzara",
+      "es": "Mosquito"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La zanzara è un insetto: ha 6 zampe e le antenne.",
+      "es": "El mosquito es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "label": {
+      "it": "Ragno",
+      "es": "Araña"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Il ragno ha 8 zampe: non è un insetto, è un aracnide.",
+      "es": "La araña tiene 8 patas: no es un insecto, es un arácnido."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "label": {
+      "it": "Scorpione",
+      "es": "Escorpión"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Lo scorpione è un aracnide: ha 8 zampe.",
+      "es": "El escorpión es un arácnido: tiene 8 patas."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "label": {
+      "it": "Granchio",
+      "es": "Cangrejo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_aragosta.jpg",
+     "label": {
+      "it": "Aragosta",
+      "es": "Langosta"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aragosta è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "La langosta es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "img": "img/an_gambero.jpg",
+     "label": {
+      "it": "Gambero",
+      "es": "Camarón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gambero è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "El camarón es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "label": {
+      "it": "Chiocciola",
+      "es": "Caracol"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La chiocciola è un mollusco: ha il corpo molle.",
+      "es": "El caracol es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_polpo.jpg",
+     "label": {
+      "it": "Polpo",
+      "es": "Pulpo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il polpo vive nel mare ma non è un pesce: ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "El pulpo vive en el mar pero no es un pez: tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "img": "img/an_calamaro.jpg",
+     "label": {
+      "it": "Calamaro",
+      "es": "Calamar"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il calamaro è un mollusco: ha il corpo molle.",
+      "es": "El calamar es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_ostrica.jpg",
+     "label": {
+      "it": "Ostrica",
+      "es": "Ostra"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "L'ostrica è un mollusco: ha il corpo molle.",
+      "es": "La ostra es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_lombrico.jpg",
+     "label": {
+      "it": "Lombrico",
+      "es": "Lombriz"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il lombrico è un verme: ha il corpo molle e lungo, senza zampe.",
+      "es": "La lombriz es un gusano: tiene el cuerpo blando y largo, sin patas."
+     }
+    }
+   ],
+   "sample": 12
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Conta le zampe!",
+    "es": "¡Contá las patas!"
+   },
+   "intro": {
+    "it": "Conta le zampe: 6, 8 o 10?",
+    "es": "Contá las patas: ¿6, 8 o 10?"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/an_formica.jpg",
+     "prompt": {
+      "it": "La formica: quante zampe? Allora che cos'è?",
+      "es": "La hormiga: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La formica è un insetto: ha 6 zampe e le antenne.",
+      "es": "La hormiga es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "prompt": {
+      "it": "L'ape: quante zampe? Allora che cos'è?",
+      "es": "La abeja: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "L'ape è un insetto: ha 6 zampe e le antenne.",
+      "es": "La abeja es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_coccinella.jpg",
+     "prompt": {
+      "it": "La coccinella: quante zampe? Allora che cos'è?",
+      "es": "La vaquita de San Antonio: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La coccinella è un insetto: ha 6 zampe e le antenne.",
+      "es": "La vaquita de San Antonio es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_grillo.jpg",
+     "prompt": {
+      "it": "Il grillo: quante zampe? Allora che cos'è?",
+      "es": "El grillo: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Il grillo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El grillo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_scarabeo.jpg",
+     "prompt": {
+      "it": "Lo scarabeo: quante zampe? Allora che cos'è?",
+      "es": "El escarabajo: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Lo scarabeo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El escarabajo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_mosca.jpg",
+     "prompt": {
+      "it": "La mosca: quante zampe? Allora che cos'è?",
+      "es": "La mosca: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La mosca è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mosca es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "prompt": {
+      "it": "Il ragno: quante zampe? Allora che cos'è?",
+      "es": "La araña: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il ragno ha 8 zampe: non è un insetto, è un aracnide.",
+      "es": "La araña tiene 8 patas: no es un insecto, es un arácnido."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "prompt": {
+      "it": "Lo scorpione: quante zampe? Allora che cos'è?",
+      "es": "El escorpión: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Lo scorpione è un aracnide: ha 8 zampe.",
+      "es": "El escorpión es un arácnido: tiene 8 patas."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "prompt": {
+      "it": "Il granchio: quante zampe? Allora che cos'è?",
+      "es": "El cangrejo: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_aragosta.jpg",
+     "prompt": {
+      "it": "L'aragosta: quante zampe? Allora che cos'è?",
+      "es": "La langosta: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "L'aragosta è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "La langosta es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "img": "img/an_gambero.jpg",
+     "prompt": {
+      "it": "Il gambero: quante zampe? Allora che cos'è?",
+      "es": "El camarón: ¿cuántas patas? Entonces, ¿qué es?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "6 zampe: insetto",
+        "es": "6 patas: insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "8 zampe: aracnide",
+        "es": "8 patas: arácnido"
+       }
+      },
+      {
+       "label": {
+        "it": "10 zampe: crostaceo",
+        "es": "10 patas: crustáceo"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Il gambero è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "El camarón es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    }
+   ],
+   "sample": 8
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Vero o falso",
+    "es": "Verdadero o falso"
+   },
+   "intro": {
+    "it": "Vero o falso? Pensa bene!",
+    "es": "¿Verdadero o falso? ¡Pensalo bien!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Il ragno è un insetto.",
+      "es": "La araña es un insecto."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: ha 8 zampe. È un aracnide.",
+      "es": "No: tiene 8 patas. Es un arácnido."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il polpo è un pesce.",
+      "es": "El pulpo es un pez."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il polpo ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "No: el pulpo tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il granchio è un crostaceo.",
+      "es": "El cangrejo es un crustáceo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha 10 zampe e un guscio duro.",
+      "es": "Sí: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il lombrico non ha zampe.",
+      "es": "La lombriz no tiene patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: si muove strisciando con i muscoli.",
+      "es": "Sí: se mueve arrastrándose con sus músculos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La chiocciola è un mollusco.",
+      "es": "El caracol es un molusco."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha il corpo molle, protetto da una conchiglia.",
+      "es": "Sí: tiene el cuerpo blando, protegido por una concha."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Alcuni invertebrati hanno un guscio duro fuori dal corpo.",
+      "es": "Algunos invertebrados tienen un caparazón duro por fuera del cuerpo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: il granchio e lo scarabeo. Li protegge, ma non è uno scheletro interno.",
+      "es": "Sí: el cangrejo y el escarabajo. Los protege, pero no es un esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il gambero ha 6 zampe.",
+      "es": "El camarón tiene 6 patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il gambero è un crostaceo e ha 10 zampe.",
+      "es": "No: el camarón es un crustáceo y tiene 10 patas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La farfalla è un insetto.",
+      "es": "La mariposa es un insecto."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha 6 zampe, le antenne e le ali.",
+      "es": "Sí: tiene 6 patas, antenas y alas."
+     }
+    }
+   ],
+   "sample": 6
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "L'intruso",
+    "es": "El intruso"
+   },
+   "intro": {
+    "it": "Tre animali vanno insieme. Uno no: trovalo!",
+    "es": "Tres animales van juntos. Uno no: ¡encontralo!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_formica.jpg",
+       "label": {
+        "it": "Formica",
+        "es": "Hormiga"
+       }
+      },
+      {
+       "img": "img/an_ape.jpg",
+       "label": {
+        "it": "Ape",
+        "es": "Abeja"
+       }
+      },
+      {
+       "img": "img/an_farfalla.jpg",
+       "label": {
+        "it": "Farfalla",
+        "es": "Mariposa"
+       }
+      },
+      {
+       "img": "img/an_ragno.jpg",
+       "label": {
+        "it": "Ragno",
+        "es": "Araña"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Il ragno è un aracnide (8 zampe). Gli altri sono insetti.",
+      "es": "La araña es un arácnido (8 patas). Los otros son insectos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_granchio.jpg",
+       "label": {
+        "it": "Granchio",
+        "es": "Cangrejo"
+       }
+      },
+      {
+       "img": "img/an_gambero.jpg",
+       "label": {
+        "it": "Gambero",
+        "es": "Camarón"
+       }
+      },
+      {
+       "img": "img/an_aragosta.jpg",
+       "label": {
+        "it": "Aragosta",
+        "es": "Langosta"
+       }
+      },
+      {
+       "img": "img/an_polpo.jpg",
+       "label": {
+        "it": "Polpo",
+        "es": "Pulpo"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Il polpo è un mollusco. Gli altri sono crostacei.",
+      "es": "El pulpo es un molusco. Los otros son crustáceos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_chiocciola.jpg",
+       "label": {
+        "it": "Chiocciola",
+        "es": "Caracol"
+       }
+      },
+      {
+       "img": "img/an_polpo.jpg",
+       "label": {
+        "it": "Polpo",
+        "es": "Pulpo"
+       }
+      },
+      {
+       "img": "img/an_ostrica.jpg",
+       "label": {
+        "it": "Ostrica",
+        "es": "Ostra"
+       }
+      },
+      {
+       "img": "img/an_scarabeo.jpg",
+       "label": {
+        "it": "Scarabeo",
+        "es": "Escarabajo"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Lo scarabeo è un insetto. Gli altri sono molluschi.",
+      "es": "El escarabajo es un insecto. Los otros son moluscos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_mosca.jpg",
+       "label": {
+        "it": "Mosca",
+        "es": "Mosca"
+       }
+      },
+      {
+       "img": "img/an_coccinella.jpg",
+       "label": {
+        "it": "Coccinella",
+        "es": "Vaquita de San Antonio"
+       }
+      },
+      {
+       "img": "img/an_lombrico.jpg",
+       "label": {
+        "it": "Lombrico",
+        "es": "Lombriz"
+       }
+      },
+      {
+       "img": "img/an_grillo.jpg",
+       "label": {
+        "it": "Grillo",
+        "es": "Grillo"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Il lombrico è un verme: non ha zampe. Gli altri sono insetti.",
+      "es": "La lombriz es un gusano: no tiene patas. Los otros son insectos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_ragno.jpg",
+       "label": {
+        "it": "Ragno",
+        "es": "Araña"
+       }
+      },
+      {
+       "img": "img/an_scorpione.jpg",
+       "label": {
+        "it": "Scorpione",
+        "es": "Escorpión"
+       }
+      },
+      {
+       "img": "img/an_zanzara.jpg",
+       "label": {
+        "it": "Zanzara",
+        "es": "Mosquito"
+       }
+      },
+      {
+       "img": "img/an_lombrico.jpg",
+       "label": {
+        "it": "Lombrico",
+        "es": "Lombriz"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Domanda difficile! La zanzara è un insetto. Ragno e scorpione sono aracnidi, il lombrico è un verme... ma la zanzara è l'unica con 6 zampe.",
+      "es": "¡Pregunta difícil! El mosquito es un insecto. Araña y escorpión son arácnidos, la lombriz es un gusano... pero el mosquito es el único con 6 patas."
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

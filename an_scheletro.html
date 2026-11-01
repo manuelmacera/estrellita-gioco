@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Con o senza scheletro?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an1_it.mp4",
+  "es": "videos/an1_es.mp4"
+ },
+ "title": {
+  "it": "Con o senza <mark>scheletro</mark>?",
+  "es": "¿Con o sin <mark>esqueleto</mark>?"
+ },
+ "parts": [
+  {
+   "type": "sort",
+   "name": {
+    "it": "Con o senza scheletro?",
+    "es": "¿Con o sin esqueleto?"
+   },
+   "intro": {
+    "it": "Ha lo scheletro dentro il corpo? Mettilo nella scatola giusta.",
+    "es": "¿Tiene esqueleto adentro del cuerpo? Ponelo en la caja correcta."
+   },
+   "bins": [
+    {
+     "it": "Vertebrati",
+     "es": "Vertebrados"
+    },
+    {
+     "it": "Invertebrati",
+     "es": "Invertebrados"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El gato tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'aquila ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El águila tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El pez tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La rana ha lo scheletro interno: è un vertebrato (un anfibio).",
+      "es": "La rana tiene esqueleto interno: es un vertebrado (un anfibio)."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "La ballena tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pinguino ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El pingüino tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Lo squalo ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El tiburón tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_formica.jpg",
+     "label": {
+      "it": "Formica",
+      "es": "Hormiga"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La formica non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La hormiga no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "label": {
+      "it": "Ragno",
+      "es": "Araña"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il ragno non ha lo scheletro interno: è un invertebrato (un aracnide).",
+      "es": "La araña no tiene esqueleto interno: es un invertebrado (un arácnido)."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "label": {
+      "it": "Granchio",
+      "es": "Cangrejo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_polpo.jpg",
+     "label": {
+      "it": "Polpo",
+      "es": "Pulpo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il polpo vive nel mare ma non è un pesce: ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "El pulpo vive en el mar pero no es un pez: tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "label": {
+      "it": "Chiocciola",
+      "es": "Caracol"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La chiocciola non ha lo scheletro interno: è un invertebrato (un mollusco).",
+      "es": "El caracol no tiene esqueleto interno: es un invertebrado (un molusco)."
+     }
+    },
+    {
+     "img": "img/an_lombrico.jpg",
+     "label": {
+      "it": "Lombrico",
+      "es": "Lombriz"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il lombrico non ha lo scheletro interno: è un invertebrato (un verme).",
+      "es": "La lombriz no tiene esqueleto interno: es un invertebrado (un gusano)."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "label": {
+      "it": "Farfalla",
+      "es": "Mariposa"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La farfalla non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La mariposa no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_gambero.jpg",
+     "label": {
+      "it": "Gambero",
+      "es": "Camarón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gambero non ha lo scheletro interno: è un invertebrato (un crostaceo).",
+      "es": "El camarón no tiene esqueleto interno: es un invertebrado (un crustáceo)."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "label": {
+      "it": "Ape",
+      "es": "Abeja"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'ape non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La abeja no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El murciélago tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    }
+   ],
+   "sample": 12
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Vero o falso",
+    "es": "Verdadero o falso"
+   },
+   "intro": {
+    "it": "Vero o falso? Pensa bene!",
+    "es": "¿Verdadero o falso? ¡Pensalo bien!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "I vertebrati hanno lo scheletro dentro il corpo.",
+      "es": "Los vertebrados tienen el esqueleto adentro del cuerpo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: lo scheletro interno sostiene il corpo e lo aiuta a muoversi.",
+      "es": "Sí: el esqueleto interno sostiene el cuerpo y lo ayuda a moverse."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli invertebrati hanno lo scheletro interno.",
+      "es": "Los invertebrados tienen esqueleto interno."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: gli invertebrati NON hanno lo scheletro interno.",
+      "es": "No: los invertebrados NO tienen esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I vertebrati si dividono in 5 gruppi.",
+      "es": "Los vertebrados se dividen en 5 grupos."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Mammiferi, uccelli, pesci, anfibi e rettili.",
+      "es": "Mamíferos, aves, peces, anfibios y reptiles."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il granchio ha uno scheletro interno.",
+      "es": "El cangrejo tiene esqueleto interno."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: ha un guscio duro fuori che lo protegge, ma dentro non ha lo scheletro.",
+      "es": "No: tiene un caparazón duro por fuera que lo protege, pero adentro no tiene esqueleto."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli insetti sono vertebrati.",
+      "es": "Los insectos son vertebrados."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: gli insetti sono invertebrati.",
+      "es": "No: los insectos son invertebrados."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il serpente non ha lo scheletro perché non ha le zampe.",
+      "es": "La serpiente no tiene esqueleto porque no tiene patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il serpente ha una colonna vertebrale lunga e flessibile. È un vertebrato!",
+      "es": "No: la serpiente tiene una columna vertebral larga y flexible. ¡Es un vertebrado!"
+     }
+    },
+    {
+     "prompt": {
+      "it": "Anche gli invertebrati si dividono in 5 gruppi.",
+      "es": "Los invertebrados también se dividen en 5 grupos."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Insetti, crostacei, molluschi, aracnidi e vermi.",
+      "es": "Insectos, crustáceos, moluscos, arácnidos y gusanos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il pesce è un vertebrato.",
+      "es": "El pez es un vertebrado."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha uno scheletro sottile e flessibile, con la spina.",
+      "es": "Sí: tiene un esqueleto fino y flexible, con espinas."
+     }
+    }
+   ],
+   "sample": 6
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "L'intruso",
+    "es": "El intruso"
+   },
+   "intro": {
+    "it": "Tre animali vanno insieme. Uno no: trovalo!",
+    "es": "Tres animales van juntos. Uno no: ¡encontralo!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_gatto.jpg",
+       "label": {
+        "it": "Gatto",
+        "es": "Gato"
+       }
+      },
+      {
+       "img": "img/an_cavallo.jpg",
+       "label": {
+        "it": "Cavallo",
+        "es": "Caballo"
+       }
+      },
+      {
+       "img": "img/an_mucca.jpg",
+       "label": {
+        "it": "Mucca",
+        "es": "Vaca"
+       }
+      },
+      {
+       "img": "img/an_formica.jpg",
+       "label": {
+        "it": "Formica",
+        "es": "Hormiga"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "La formica è un invertebrato. Gli altri sono vertebrati.",
+      "es": "La hormiga es un invertebrado. Los otros son vertebrados."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_ragno.jpg",
+       "label": {
+        "it": "Ragno",
+        "es": "Araña"
+       }
+      },
+      {
+       "img": "img/an_chiocciola.jpg",
+       "label": {
+        "it": "Chiocciola",
+        "es": "Caracol"
+       }
+      },
+      {
+       "img": "img/an_lombrico.jpg",
+       "label": {
+        "it": "Lombrico",
+        "es": "Lombriz"
+       }
+      },
+      {
+       "img": "img/an_pesce.jpg",
+       "label": {
+        "it": "Pesce",
+        "es": "Pez"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Il pesce è un vertebrato. Gli altri sono invertebrati.",
+      "es": "El pez es un vertebrado. Los otros son invertebrados."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_aquila.jpg",
+       "label": {
+        "it": "Aquila",
+        "es": "Águila"
+       }
+      },
+      {
+       "img": "img/an_serpente.jpg",
+       "label": {
+        "it": "Serpente",
+        "es": "Serpiente"
+       }
+      },
+      {
+       "img": "img/an_granchio.jpg",
+       "label": {
+        "it": "Granchio",
+        "es": "Cangrejo"
+       }
+      },
+      {
+       "img": "img/an_rana.jpg",
+       "label": {
+        "it": "Rana",
+        "es": "Rana"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Il granchio è un invertebrato. Gli altri hanno lo scheletro interno.",
+      "es": "El cangrejo es un invertebrado. Los otros tienen esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_polpo.jpg",
+       "label": {
+        "it": "Polpo",
+        "es": "Pulpo"
+       }
+      },
+      {
+       "img": "img/an_ape.jpg",
+       "label": {
+        "it": "Ape",
+        "es": "Abeja"
+       }
+      },
+      {
+       "img": "img/an_scarabeo.jpg",
+       "label": {
+        "it": "Scarabeo",
+        "es": "Escarabajo"
+       }
+      },
+      {
+       "img": "img/an_delfino.jpg",
+       "label": {
+        "it": "Delfino",
+        "es": "Delfín"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Il delfino è un vertebrato (un mammifero).",
+      "es": "El delfín es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Chi è l'intruso?",
+      "es": "¿Quién es el intruso?"
+     },
+     "options": [
+      {
+       "img": "img/an_lucertola.jpg",
+       "label": {
+        "it": "Lucertola",
+        "es": "Lagartija"
+       }
+      },
+      {
+       "img": "img/an_cavallo.jpg",
+       "label": {
+        "it": "Cavallo",
+        "es": "Caballo"
+       }
+      },
+      {
+       "img": "img/an_pinguino.jpg",
+       "label": {
+        "it": "Pinguino",
+        "es": "Pingüino"
+       }
+      },
+      {
+       "img": "img/an_coccinella.jpg",
+       "label": {
+        "it": "Coccinella",
+        "es": "Vaquita de San Antonio"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "La coccinella è un insetto: un invertebrato.",
+      "es": "La vaquita de San Antonio es un insecto: un invertebrado."
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

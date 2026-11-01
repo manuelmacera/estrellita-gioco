@@ -122,7 +122,9 @@
 
     // ---------------------------------------------------------------- choice / sort
     function startQuiz(p) {
-      S.st = { order: p.shuffle === false ? p.items.map((_, i) => i) : shuffle(p.items.map((_, i) => i)), i: 0, first: 0, total: p.items.length, wrong: false, binsFill: (p.bins || []).map(() => []) };
+      let order = p.shuffle === false ? p.items.map((_, i) => i) : shuffle(p.items.map((_, i) => i));
+      if (p.sample) order = order.slice(0, p.sample);   // a fresh draw from the bank on every play
+      S.st = { order, i: 0, first: 0, total: order.length, wrong: false, binsFill: (p.bins || []).map(() => []) };
       renderQuiz(p);
     }
     function renderQuiz(p) {
@@ -144,7 +146,7 @@
         }).join('') + '</div>';
       } else {
         h += `<div class="item${it.img ? '' : ' noimg'}">${it.img ? `<img src="${it.img}" alt="">` : ''}<p>${esc(L(it.label))}</p></div>`;
-        h += `<div class="bins" style="--bins:${p.bins.length}">` + p.bins.map((b, k) => `<button type="button" class="bin b${k}" data-k="${k}"><h3>${esc(L(b))}</h3>${st.binsFill[k].map(x => `<span class="mini">${esc(L(x))}</span>`).join('')}</button>`).join('') + '</div>';
+        h += `<div class="bins${p.bins.length > 3 ? ' many' : ''}" style="--bins:${p.bins.length}">` + p.bins.map((b, k) => `<button type="button" class="bin b${k}" data-k="${k}"><h3>${esc(L(b))}</h3>${st.binsFill[k].map(x => `<span class="mini">${esc(L(x))}</span>`).join('')}</button>`).join('') + '</div>';
       }
       h += `<p class="explain" id="explain" hidden></p><div class="actions"><button type="button" class="btn" id="next" hidden>${U().next}</button></div>`;
       $('stage').innerHTML = h;

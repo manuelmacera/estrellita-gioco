@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gli insetti da vicino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an5_it.mp4",
+  "es": "videos/an5_es.mp4"
+ },
+ "title": {
+  "it": "Gli <mark>insetti</mark> da vicino",
+  "es": "Los <mark>insectos</mark> de cerca"
+ },
+ "parts": [
+  {
+   "type": "choice",
+   "name": {
+    "it": "Le parti del corpo",
+    "es": "Las partes del cuerpo"
+   },
+   "intro": {
+    "it": "Guarda la parte gialla. Come si chiama?",
+    "es": "Mirá la parte amarilla. ¿Cómo se llama?"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/ins_capo.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Il capo: qui ci sono gli occhi e le antenne.",
+      "es": "La cabeza: acá están los ojos y las antenas."
+     }
+    },
+    {
+     "img": "img/ins_torace.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il torace: la parte in mezzo. Qui sono attaccate le zampe e le ali.",
+      "es": "El tórax: la parte del medio. Acá se enganchan las patas y las alas."
+     }
+    },
+    {
+     "img": "img/ins_addome.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "L'addome: la parte dietro, la più grande.",
+      "es": "El abdomen: la parte de atrás, la más grande."
+     }
+    },
+    {
+     "img": "img/ins_antenne.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "Le antenne: sono sul capo e servono a sentire.",
+      "es": "Las antenas: están en la cabeza y sirven para sentir."
+     }
+    },
+    {
+     "img": "img/ins_zampe.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 4,
+     "explain": {
+      "it": "Le zampe: sono sei, tre per lato.",
+      "es": "Las patas: son seis, tres de cada lado."
+     }
+    },
+    {
+     "img": "img/ins_ali.jpg",
+     "prompt": {
+      "it": "Come si chiama la parte gialla?",
+      "es": "¿Cómo se llama la parte amarilla?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Capo",
+        "es": "Cabeza"
+       }
+      },
+      {
+       "label": {
+        "it": "Torace",
+        "es": "Tórax"
+       }
+      },
+      {
+       "label": {
+        "it": "Addome",
+        "es": "Abdomen"
+       }
+      },
+      {
+       "label": {
+        "it": "Antenne",
+        "es": "Antenas"
+       }
+      },
+      {
+       "label": {
+        "it": "Zampe (6)",
+        "es": "Patas (6)"
+       }
+      },
+      {
+       "label": {
+        "it": "Ali",
+        "es": "Alas"
+       }
+      }
+     ],
+     "answer": 5,
+     "explain": {
+      "it": "Le ali: molti insetti ne hanno quattro.",
+      "es": "Las alas: muchos insectos tienen cuatro."
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "È un insetto?",
+    "es": "¿Es un insecto?"
+   },
+   "intro": {
+    "it": "Conta le zampe: se sono 6, è un insetto!",
+    "es": "Contá las patas: si son 6, ¡es un insecto!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/an_formica.jpg",
+     "prompt": {
+      "it": "La formica è un insetto?",
+      "es": "¿La hormiga es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La formica è un insetto: ha 6 zampe e le antenne.",
+      "es": "La hormiga es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "prompt": {
+      "it": "L'ape è un insetto?",
+      "es": "¿La abeja es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "L'ape è un insetto: ha 6 zampe e le antenne.",
+      "es": "La abeja es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "prompt": {
+      "it": "Il ragno è un insetto?",
+      "es": "¿La araña es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il ragno ha 8 zampe: non è un insetto, è un aracnide.",
+      "es": "La araña tiene 8 patas: no es un insecto, es un arácnido."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "prompt": {
+      "it": "La farfalla è un insetto?",
+      "es": "¿La mariposa es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La farfalla è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mariposa es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_lombrico.jpg",
+     "prompt": {
+      "it": "Il lombrico è un insetto?",
+      "es": "¿La lombriz es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il lombrico è un verme: ha il corpo molle e lungo, senza zampe.",
+      "es": "La lombriz es un gusano: tiene el cuerpo blando y largo, sin patas."
+     }
+    },
+    {
+     "img": "img/an_coccinella.jpg",
+     "prompt": {
+      "it": "La coccinella è un insetto?",
+      "es": "¿La vaquita de San Antonio es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La coccinella è un insetto: ha 6 zampe e le antenne.",
+      "es": "La vaquita de San Antonio es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "prompt": {
+      "it": "Lo scorpione è un insetto?",
+      "es": "¿El escorpión es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Lo scorpione è un aracnide: ha 8 zampe.",
+      "es": "El escorpión es un arácnido: tiene 8 patas."
+     }
+    },
+    {
+     "img": "img/an_mosca.jpg",
+     "prompt": {
+      "it": "La mosca è un insetto?",
+      "es": "¿La mosca es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La mosca è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mosca es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "prompt": {
+      "it": "Il granchio è un insetto?",
+      "es": "¿El cangrejo es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_grillo.jpg",
+     "prompt": {
+      "it": "Il grillo è un insetto?",
+      "es": "¿El grillo es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Il grillo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El grillo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "prompt": {
+      "it": "La chiocciola è un insetto?",
+      "es": "¿El caracol es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "La chiocciola è un mollusco: ha il corpo molle.",
+      "es": "El caracol es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_zanzara.jpg",
+     "prompt": {
+      "it": "La zanzara è un insetto?",
+      "es": "¿El mosquito es un insecto?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì, è un insetto",
+        "es": "Sí, es un insecto"
+       }
+      },
+      {
+       "label": {
+        "it": "No, non è un insetto",
+        "es": "No, no es un insecto"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La zanzara è un insetto: ha 6 zampe e le antenne.",
+      "es": "El mosquito es un insecto: tiene 6 patas y antenas."
+     }
+    }
+   ],
+   "sample": 8
+  },
+  {
+   "type": "fill",
+   "name": {
+    "it": "Completa le frasi",
+    "es": "Completá las frases"
+   },
+   "intro": {
+    "it": "Quale parola manca? Toccala!",
+    "es": "¿Qué palabra falta? ¡Tocala!"
+   },
+   "items": [
+    {
+     "text": {
+      "it": "Gli insetti hanno ___ zampe.",
+      "es": "Los insectos tienen ___ patas."
+     },
+     "answer": {
+      "it": "SEI",
+      "es": "SEIS"
+     }
+    },
+    {
+     "text": {
+      "it": "Sul capo gli insetti hanno le ___.",
+      "es": "En la cabeza los insectos tienen ___."
+     },
+     "answer": {
+      "it": "ANTENNE",
+      "es": "ANTENAS"
+     }
+    },
+    {
+     "text": {
+      "it": "Il corpo ha tre parti: capo, ___ e addome.",
+      "es": "El cuerpo tiene tres partes: cabeza, ___ y abdomen."
+     },
+     "answer": {
+      "it": "TORACE",
+      "es": "TÓRAX"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli insetti nascono dalle ___.",
+      "es": "Los insectos nacen de ___."
+     },
+     "answer": {
+      "it": "UOVA",
+      "es": "HUEVOS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli insetti sono ___: non hanno lo scheletro interno.",
+      "es": "Los insectos son ___: no tienen esqueleto interno."
+     },
+     "answer": {
+      "it": "INVERTEBRATI",
+      "es": "INVERTEBRADOS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli insetti sono il gruppo di animali più ___ sulla Terra.",
+      "es": "Los insectos son el grupo de animales más ___ de la Tierra."
+     },
+     "answer": {
+      "it": "NUMEROSO",
+      "es": "NUMEROSO"
+     }
+    },
+    {
+     "text": {
+      "it": "Spesso gli insetti hanno anche le ___.",
+      "es": "Muchas veces los insectos también tienen ___."
+     },
+     "answer": {
+      "it": "ALI",
+      "es": "ALAS"
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

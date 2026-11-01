@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Come respirano, come nascono</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an6_it.mp4",
+  "es": "videos/an6_es.mp4"
+ },
+ "title": {
+  "it": "Come <mark>respirano</mark>, come <mark>nascono</mark>",
+  "es": "Cómo <mark>respiran</mark>, cómo <mark>nacen</mark>"
+ },
+ "parts": [
+  {
+   "type": "sort",
+   "name": {
+    "it": "Come respira?",
+    "es": "¿Cómo respira?"
+   },
+   "intro": {
+    "it": "Polmoni o branchie? Tocca la scatola giusta.",
+    "es": "¿Pulmones o branquias? Tocá la caja correcta."
+   },
+   "bins": [
+    {
+     "it": "Polmoni",
+     "es": "Pulmones"
+    },
+    {
+     "it": "Branchie",
+     "es": "Branquias"
+    },
+    {
+     "it": "Prima branchie, poi polmoni",
+     "es": "Primero branquias, después pulmones"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il leone respira con i polmoni.",
+      "es": "El león respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca respira con i polmoni.",
+      "es": "La vaca respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto respira con i polmoni.",
+      "es": "El gato respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo respira con i polmoni.",
+      "es": "El caballo respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio respira con i polmoni.",
+      "es": "El conejo respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante respira con i polmoni.",
+      "es": "El elefante respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa respira con i polmoni.",
+      "es": "La jirafa respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena vive nel mare ma respira con i polmoni: sale in superficie a prendere aria.",
+      "es": "La ballena vive en el mar pero respira con pulmones: sube a la superficie a tomar aire."
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il delfino vive nel mare ma respira con i polmoni: sale in superficie a prendere aria.",
+      "es": "El delfín vive en el mar pero respira con pulmones: sube a la superficie a tomar aire."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La foca respira con i polmoni.",
+      "es": "La foca respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello respira con i polmoni.",
+      "es": "El murciélago respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'orso respira con i polmoni.",
+      "es": "El oso respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il maiale respira con i polmoni.",
+      "es": "El cerdo respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il topo respira con i polmoni.",
+      "es": "El ratón respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tigre respira con i polmoni.",
+      "es": "El tigre respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala respira con i polmoni.",
+      "es": "El koala respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'essere umano respira con i polmoni.",
+      "es": "El ser humano respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'aquila respira con i polmoni.",
+      "es": "El águila respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pinguino respira con i polmoni.",
+      "es": "El pingüino respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gufo respira con i polmoni.",
+      "es": "El búho respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La gallina respira con i polmoni.",
+      "es": "La gallina respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pappagallo respira con i polmoni.",
+      "es": "El loro respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'anatra respira con i polmoni.",
+      "es": "El pato respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_passerotto.jpg",
+     "label": {
+      "it": "Passerotto",
+      "es": "Gorrión"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il passerotto respira con i polmoni.",
+      "es": "El gorrión respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce respira con le branchie.",
+      "es": "El pez respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce angelo respira con le branchie.",
+      "es": "El pez ángel respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo squalo respira con le branchie.",
+      "es": "El tiburón respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce palla respira con le branchie.",
+      "es": "El pez globo respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La rana prima respira con le branchie, poi con i polmoni.",
+      "es": "La rana primero respira con branquias y después con pulmones."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La salamandra prima respira con le branchie, poi con i polmoni.",
+      "es": "La salamandra primero respira con branquias y después con pulmones."
+     }
+    },
+    {
+     "img": "img/an_girino.jpg",
+     "label": {
+      "it": "Girino",
+      "es": "Renacuajo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il girino respira con le branchie.",
+      "es": "El renacuajo respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tartaruga respira con i polmoni.",
+      "es": "La tortuga respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il serpente respira con i polmoni.",
+      "es": "La serpiente respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coccodrillo respira con i polmoni.",
+      "es": "El cocodrilo respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La lucertola respira con i polmoni.",
+      "es": "La lagartija respira con pulmones."
+     }
+    }
+   ],
+   "sample": 12
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Come nasce?",
+    "es": "¿Cómo nace?"
+   },
+   "intro": {
+    "it": "Dall'uovo o dalla pancia della mamma?",
+    "es": "¿Del huevo o de la panza de la mamá?"
+   },
+   "bins": [
+    {
+     "it": "Ovipari",
+     "es": "Ovíparos"
+    },
+    {
+     "it": "Vivipari",
+     "es": "Vivíparos"
+    },
+    {
+     "it": "Ovovivipari",
+     "es": "Ovovivíparos"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La gallina nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "La gallina nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La rana nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "La rana nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coccodrillo nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "El cocodrilo nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "label": {
+      "it": "Farfalla",
+      "es": "Mariposa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La farfalla nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "La mariposa nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "El pez nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_cane.jpg",
+     "label": {
+      "it": "Cane",
+      "es": "Perro"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il cane cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "El perro crece en la panza de la mamá: es de los vivíparos."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La balena cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "La ballena crece en la panza de la mamá: es de los vivíparos."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pipistrello cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "El murciélago crece en la panza de la mamá: es de los vivíparos."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La mucca cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "La vaca crece en la panza de la mamá: es de los vivíparos."
+     }
+    },
+    {
+     "img": "img/an_vipera.jpg",
+     "label": {
+      "it": "Vipera",
+      "es": "Víbora"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La vipera nasce da un uovo che resta nella pancia della mamma: fa parte degli ovovivipari.",
+      "es": "La víbora nace de un huevo que se queda en la panza de la mamá: es de los ovovivíparos."
+     }
+    },
+    {
+     "img": "img/an_squalobianco.jpg",
+     "label": {
+      "it": "Squalo bianco",
+      "es": "Tiburón blanco"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Lo squalo bianco nasce da un uovo che resta nella pancia della mamma: fa parte degli ovovivipari.",
+      "es": "El tiburón blanco nace de un huevo que se queda en la panza de la mamá: es de los ovovivíparos."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pinguino nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "El pingüino nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tartaruga nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "La tortuga nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'essere umano cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "El ser humano crece en la panza de la mamá: es de los vivíparos."
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Vero o falso",
+    "es": "Verdadero o falso"
+   },
+   "intro": {
+    "it": "Vero o falso? Pensa bene!",
+    "es": "¿Verdadero o falso? ¡Pensalo bien!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "La balena respira con le branchie.",
+      "es": "La ballena respira con branquias."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: la balena è un mammifero e respira con i polmoni.",
+      "es": "No: la ballena es un mamífero y respira con pulmones."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il girino respira con le branchie.",
+      "es": "El renacuajo respira con branquias."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: da piccola la rana vive in acqua e respira con le branchie.",
+      "es": "Sí: de chiquita la rana vive en el agua y respira con branquias."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli uccelli sono ovipari.",
+      "es": "Las aves son ovíparas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: nascono dalle uova.",
+      "es": "Sí: nacen de huevos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il cane è oviparo.",
+      "es": "El perro es ovíparo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il cane è un mammifero, viviparo.",
+      "es": "No: el perro es un mamífero, vivíparo."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La vipera è ovovivipara.",
+      "es": "La víbora es ovovivípara."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: l'uovo resta nella pancia della mamma.",
+      "es": "Sí: el huevo se queda en la panza de la mamá."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il pipistrello nasce da un uovo.",
+      "es": "El murciélago nace de un huevo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: è un mammifero, cresce nella pancia della mamma.",
+      "es": "No: es un mamífero, crece en la panza de la mamá."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I pesci respirano con i polmoni.",
+      "es": "Los peces respiran con pulmones."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: i pesci respirano con le branchie.",
+      "es": "No: los peces respiran con branquias."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I rettili respirano con i polmoni.",
+      "es": "Los reptiles respiran con pulmones."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: anche il coccodrillo e la tartaruga.",
+      "es": "Sí: también el cocodrilo y la tortuga."
+     }
+    }
+   ],
+   "sample": 6
+  },
+  {
+   "type": "fill",
+   "name": {
+    "it": "Completa le frasi",
+    "es": "Completá las frases"
+   },
+   "intro": {
+    "it": "Quale parola manca? Toccala!",
+    "es": "¿Qué palabra falta? ¡Tocala!"
+   },
+   "items": [
+    {
+     "text": {
+      "it": "I pesci respirano con le ___.",
+      "es": "Los peces respiran con ___."
+     },
+     "answer": {
+      "it": "BRANCHIE",
+      "es": "BRANQUIAS"
+     }
+    },
+    {
+     "text": {
+      "it": "I mammiferi, gli uccelli e i rettili respirano con i ___.",
+      "es": "Los mamíferos, las aves y los reptiles respiran con ___."
+     },
+     "answer": {
+      "it": "POLMONI",
+      "es": "PULMONES"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli animali che nascono dalle uova deposte fuori sono ___.",
+      "es": "Los animales que nacen de huevos puestos afuera son ___."
+     },
+     "answer": {
+      "it": "OVIPARI",
+      "es": "OVÍPAROS"
+     }
+    },
+    {
+     "text": {
+      "it": "Se il piccolo cresce nella pancia della mamma, l'animale è ___.",
+      "es": "Si la cría crece en la panza de la mamá, el animal es ___."
+     },
+     "answer": {
+      "it": "VIVIPARO",
+      "es": "VIVÍPARO"
+     }
+    },
+    {
+     "text": {
+      "it": "Se l'uovo resta nella pancia della mamma, l'animale è ___.",
+      "es": "Si el huevo se queda en la panza de la mamá, el animal es ___."
+     },
+     "answer": {
+      "it": "OVOVIVIPARO",
+      "es": "OVOVIVÍPARO"
+     }
+    },
+    {
+     "text": {
+      "it": "La rana adulta respira con i polmoni e anche con la ___.",
+      "es": "La rana adulta respira con pulmones y también con la ___."
+     },
+     "answer": {
+      "it": "PELLE",
+      "es": "PIEL"
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

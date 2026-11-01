@@ -1,0 +1,1383 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pesci, anfibi e rettili</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an3_it.mp4",
+  "es": "videos/an3_es.mp4"
+ },
+ "title": {
+  "it": "Pesci, <mark>anfibi</mark> e rettili",
+  "es": "Peces, <mark>anfibios</mark> y reptiles"
+ },
+ "parts": [
+  {
+   "type": "sort",
+   "name": {
+    "it": "Pesce, anfibio o rettile?",
+    "es": "¿Pez, anfibio o reptil?"
+   },
+   "intro": {
+    "it": "Tocca la scatola giusta!",
+    "es": "¡Tocá la caja correcta!"
+   },
+   "bins": [
+    {
+     "it": "Pesci",
+     "es": "Peces"
+    },
+    {
+     "it": "Anfibi",
+     "es": "Anfibios"
+    },
+    {
+     "it": "Rettili",
+     "es": "Reptiles"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce angelo è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez ángel es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Lo squalo è un pesce, non un mammifero: respira con le branchie e ha le pinne.",
+      "es": "El tiburón es un pez, no un mamífero: respira con branquias y tiene aletas."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce palla è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez globo es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La rana è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La rana es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La salamandra è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La salamandra es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_girino.jpg",
+     "label": {
+      "it": "Girino",
+      "es": "Renacuajo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il girino è la rana da piccola: è un anfibio.",
+      "es": "El renacuajo es la rana de chiquita: es un anfibio."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il coccodrillo è un rettile: ha le squame e respira con i polmoni.",
+      "es": "El cocodrilo es un reptil: tiene escamas y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La lucertola è un rettile: ha le squame e respira con i polmoni.",
+      "es": "La lagartija es un reptil: tiene escamas y respira con pulmones."
+     }
+    }
+   ],
+   "sample": 10
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Chi è?",
+    "es": "¿Quién es?"
+   },
+   "intro": {
+    "it": "Di chi parlo?",
+    "es": "¿De quién hablo?"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Ha squame e pinne.",
+      "es": "Tiene escamas y aletas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "prompt": {
+      "it": "Ha la pelle umida.",
+      "es": "Tiene la piel húmeda."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Ha le squame dure e vive sulla terra.",
+      "es": "Tiene escamas duras y vive en la tierra."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "prompt": {
+      "it": "Respira con le branchie per tutta la vita.",
+      "es": "Respira con branquias toda la vida."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "prompt": {
+      "it": "Da piccolo vive in acqua, da grande sulla terra.",
+      "es": "De chiquito vive en el agua, de grande en la tierra."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Ha una colonna vertebrale lunga e flessibile.",
+      "es": "Tiene una columna vertebral larga y flexible."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 2
+    },
+    {
+     "prompt": {
+      "it": "Ha lo scheletro sottile e flessibile.",
+      "es": "Tiene el esqueleto fino y flexible."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "prompt": {
+      "it": "Crescendo cambia forma: fa la metamorfosi.",
+      "es": "Al crecer cambia de forma: hace la metamorfosis."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 1
+    },
+    {
+     "prompt": {
+      "it": "Alcuni non hanno le zampe, altri hanno il guscio.",
+      "es": "Algunos no tienen patas, otros tienen caparazón."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 2
+    }
+   ],
+   "sample": 7
+  },
+  {
+   "type": "order",
+   "name": {
+    "it": "La metamorfosi",
+    "es": "La metamorfosis"
+   },
+   "intro": {
+    "it": "Come diventa grande la rana? Tocca le carte in ordine.",
+    "es": "¿Cómo crece la rana? Tocá las cartas en orden."
+   },
+   "items": [
+    {
+     "img": "img/meta1_uova.jpg",
+     "label": {
+      "it": "Le uova nell'acqua",
+      "es": "Los huevos en el agua"
+     }
+    },
+    {
+     "img": "img/meta2_girino.jpg",
+     "label": {
+      "it": "Il girino",
+      "es": "El renacuajo"
+     }
+    },
+    {
+     "img": "img/meta3_zampe.jpg",
+     "label": {
+      "it": "Il girino con le zampe",
+      "es": "El renacuajo con patas"
+     }
+    },
+    {
+     "img": "img/meta4_ranocchia.jpg",
+     "label": {
+      "it": "La piccola rana con la coda",
+      "es": "La ranita con cola"
+     }
+    },
+    {
+     "img": "img/meta5_rana.jpg",
+     "label": {
+      "it": "La rana adulta",
+      "es": "La rana adulta"
+     }
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Sangue caldo o freddo?",
+    "es": "¿Sangre caliente o fría?"
+   },
+   "intro": {
+    "it": "Mammiferi e uccelli hanno il sangue caldo. Pesci, anfibi e rettili il sangue freddo.",
+    "es": "Mamíferos y aves tienen sangre caliente. Peces, anfibios y reptiles, sangre fría."
+   },
+   "bins": [
+    {
+     "it": "Sangue caldo",
+     "es": "Sangre caliente"
+    },
+    {
+     "it": "Sangue freddo",
+     "es": "Sangre fría"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il leone è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El león es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La vaca es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El gato es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El caballo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El conejo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El elefante es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La jirafa es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena vive nel mare, ma non è un pesce: respira con i polmoni e beve il latte della mamma. È un mammifero!",
+      "es": "La ballena vive en el mar, pero no es un pez: respira con pulmones y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il delfino vive nel mare, ma è un mammifero: respira con i polmoni e beve il latte della mamma.",
+      "es": "El delfín vive en el mar, pero es un mamífero: respira con pulmones y toma la leche de su mamá."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La foca nuota nel mare, ma è un mammifero: respira con i polmoni.",
+      "es": "La foca nada en el mar, pero es un mamífero: respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello vola, ma non è un uccello: ha i peli e beve il latte della mamma. È un mammifero!",
+      "es": "El murciélago vuela, pero no es un ave: tiene pelos y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'orso è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El oso es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il maiale è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El cerdo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il topo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El ratón es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tigre è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El tigre es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El koala es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Anche noi esseri umani siamo mammiferi!",
+      "es": "¡Nosotros, los seres humanos, también somos mamíferos!"
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'aquila è un uccello: ha le piume, le ali e il becco.",
+      "es": "El águila es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pinguino non vola, ma è un uccello: ha le piume, le ali e nasce da un uovo.",
+      "es": "El pingüino no vuela, pero es un ave: tiene plumas, alas y nace de un huevo."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gufo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El búho es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La gallina è un uccello: ha le piume, le ali e il becco.",
+      "es": "La gallina es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pappagallo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El loro es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'anatra è un uccello: ha le piume, le ali e il becco.",
+      "es": "El pato es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_passerotto.jpg",
+     "label": {
+      "it": "Passerotto",
+      "es": "Gorrión"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il passerotto è un uccello: ha le piume, le ali e il becco.",
+      "es": "El gorrión es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce angelo è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez ángel es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo squalo è un pesce, non un mammifero: respira con le branchie e ha le pinne.",
+      "es": "El tiburón es un pez, no un mamífero: respira con branquias y tiene aletas."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pesce palla è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez globo es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La rana è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La rana es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La salamandra è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La salamandra es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il coccodrillo è un rettile: ha le squame e respira con i polmoni.",
+      "es": "El cocodrilo es un reptil: tiene escamas y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La lucertola è un rettile: ha le squame e respira con i polmoni.",
+      "es": "La lagartija es un reptil: tiene escamas y respira con pulmones."
+     }
+    }
+   ],
+   "sample": 10
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Tutte e 5 le famiglie",
+    "es": "Las 5 familias"
+   },
+   "intro": {
+    "it": "Metti ogni animale nella sua famiglia.",
+    "es": "Poné cada animal en su familia."
+   },
+   "bins": [
+    {
+     "it": "Mammiferi",
+     "es": "Mamíferos"
+    },
+    {
+     "it": "Uccelli",
+     "es": "Aves"
+    },
+    {
+     "it": "Pesci",
+     "es": "Peces"
+    },
+    {
+     "it": "Anfibi",
+     "es": "Anfibios"
+    },
+    {
+     "it": "Rettili",
+     "es": "Reptiles"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il leone è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El león es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La vaca es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El gato es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El caballo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El conejo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El elefante es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La jirafa es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena vive nel mare, ma non è un pesce: respira con i polmoni e beve il latte della mamma. È un mammifero!",
+      "es": "La ballena vive en el mar, pero no es un pez: respira con pulmones y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il delfino vive nel mare, ma è un mammifero: respira con i polmoni e beve il latte della mamma.",
+      "es": "El delfín vive en el mar, pero es un mamífero: respira con pulmones y toma la leche de su mamá."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La foca nuota nel mare, ma è un mammifero: respira con i polmoni.",
+      "es": "La foca nada en el mar, pero es un mamífero: respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello vola, ma non è un uccello: ha i peli e beve il latte della mamma. È un mammifero!",
+      "es": "El murciélago vuela, pero no es un ave: tiene pelos y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'orso è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El oso es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il maiale è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El cerdo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il topo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El ratón es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tigre è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El tigre es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El koala es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Anche noi esseri umani siamo mammiferi!",
+      "es": "¡Nosotros, los seres humanos, también somos mamíferos!"
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aquila è un uccello: ha le piume, le ali e il becco.",
+      "es": "El águila es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pinguino non vola, ma è un uccello: ha le piume, le ali e nasce da un uovo.",
+      "es": "El pingüino no vuela, pero es un ave: tiene plumas, alas y nace de un huevo."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gufo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El búho es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La gallina è un uccello: ha le piume, le ali e il becco.",
+      "es": "La gallina es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pappagallo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El loro es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'anatra è un uccello: ha le piume, le ali e il becco.",
+      "es": "El pato es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_passerotto.jpg",
+     "label": {
+      "it": "Passerotto",
+      "es": "Gorrión"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il passerotto è un uccello: ha le piume, le ali e il becco.",
+      "es": "El gorrión es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce angelo è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez ángel es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Lo squalo è un pesce, non un mammifero: respira con le branchie e ha le pinne.",
+      "es": "El tiburón es un pez, no un mamífero: respira con branquias y tiene aletas."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce palla è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez globo es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "La rana è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La rana es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "La salamandra è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La salamandra es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_girino.jpg",
+     "label": {
+      "it": "Girino",
+      "es": "Renacuajo"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Il girino è la rana da piccola: è un anfibio.",
+      "es": "El renacuajo es la rana de chiquita: es un anfibio."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il coccodrillo è un rettile: ha le squame e respira con i polmoni.",
+      "es": "El cocodrilo es un reptil: tiene escamas y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "La lucertola è un rettile: ha le squame e respira con i polmoni.",
+      "es": "La lagartija es un reptil: tiene escamas y respira con pulmones."
+     }
+    }
+   ],
+   "sample": 15
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

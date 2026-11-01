@@ -1,0 +1,1123 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cosa mangiano?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "video": {
+  "it": "videos/an7_it.mp4",
+  "es": "videos/an7_es.mp4"
+ },
+ "title": {
+  "it": "Cosa <mark>mangiano</mark>?",
+  "es": "¿Qué <mark>comen</mark>?"
+ },
+ "parts": [
+  {
+   "type": "sort",
+   "name": {
+    "it": "Erbivori, carnivori, onnivori",
+    "es": "Herbívoros, carnívoros, omnívoros"
+   },
+   "intro": {
+    "it": "Cosa mangia? Tocca la scatola giusta.",
+    "es": "¿Qué come? Tocá la caja correcta."
+   },
+   "bins": [
+    {
+     "it": "Erbivori (vegetali)",
+     "es": "Herbívoros (vegetales)"
+    },
+    {
+     "it": "Carnivori (carne)",
+     "es": "Carnívoros (carne)"
+    },
+    {
+     "it": "Onnivori (tutti e due)",
+     "es": "Omnívoros (los dos)"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il leone mangia carne: fa parte dei carnivori.",
+      "es": "El león come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca mangia vegetali: fa parte degli erbivori.",
+      "es": "La vaca come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gatto mangia carne: fa parte dei carnivori.",
+      "es": "El gato come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo mangia vegetali: fa parte degli erbivori.",
+      "es": "El caballo come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio mangia vegetali: fa parte degli erbivori.",
+      "es": "El conejo come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante mangia vegetali: fa parte degli erbivori.",
+      "es": "El elefante come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa mangia vegetali: fa parte degli erbivori.",
+      "es": "La jirafa come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il delfino mangia carne: fa parte dei carnivori.",
+      "es": "El delfín come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La foca mangia carne: fa parte dei carnivori.",
+      "es": "La foca come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "L'orso mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "El oso come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il maiale mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "El cerdo come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il topo mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "El ratón come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_lupo.jpg",
+     "label": {
+      "it": "Lupo",
+      "es": "Lobo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il lupo mangia carne: fa parte dei carnivori.",
+      "es": "El lobo come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La tigre mangia carne: fa parte dei carnivori.",
+      "es": "El tigre come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala mangia vegetali: fa parte degli erbivori.",
+      "es": "El koala come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "L'essere umano mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "El ser humano come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aquila mangia carne: fa parte dei carnivori.",
+      "es": "El águila come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pinguino mangia carne: fa parte dei carnivori.",
+      "es": "El pingüino come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gufo mangia carne: fa parte dei carnivori.",
+      "es": "El búho come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La gallina mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "La gallina come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pappagallo mangia vegetali: fa parte degli erbivori.",
+      "es": "El loro come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "L'anatra mangia sia vegetali sia carne: fa parte degli onnivori.",
+      "es": "El pato come vegetales y carne: es de los omnívoros."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo squalo mangia carne: fa parte dei carnivori.",
+      "es": "El tiburón come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La rana mangia carne: fa parte dei carnivori.",
+      "es": "La rana come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La salamandra mangia carne: fa parte dei carnivori.",
+      "es": "La salamandra come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il serpente mangia carne: fa parte dei carnivori.",
+      "es": "La serpiente come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il coccodrillo mangia carne: fa parte dei carnivori.",
+      "es": "El cocodrilo come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La lucertola mangia carne: fa parte dei carnivori.",
+      "es": "La lagartija come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "label": {
+      "it": "Ragno",
+      "es": "Araña"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il ragno mangia carne: fa parte dei carnivori.",
+      "es": "La araña come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "label": {
+      "it": "Scorpione",
+      "es": "Escorpión"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo scorpione mangia carne: fa parte dei carnivori.",
+      "es": "El escorpión come carne: es de los carnívoros."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "label": {
+      "it": "Chiocciola",
+      "es": "Caracol"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La chiocciola mangia vegetali: fa parte degli erbivori.",
+      "es": "El caracol come vegetales: es de los herbívoros."
+     }
+    },
+    {
+     "img": "img/an_polpo.jpg",
+     "label": {
+      "it": "Polpo",
+      "es": "Pulpo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il polpo mangia carne: fa parte dei carnivori.",
+      "es": "El pulpo come carne: es de los carnívoros."
+     }
+    }
+   ],
+   "sample": 12
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Carta d'identità: il leone",
+    "es": "Documento: el león"
+   },
+   "intro": {
+    "it": "Rispondi a tutte le domande sul leone.",
+    "es": "Respondé todas las preguntas sobre el león."
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "prompt": {
+      "it": "Il leone: ha lo scheletro interno?",
+      "es": "El león: ¿tiene esqueleto interno?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì: è un vertebrato",
+        "es": "Sí: es un vertebrado"
+       }
+      },
+      {
+       "label": {
+        "it": "No: è un invertebrato",
+        "es": "No: es un invertebrado"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "img": "img/an_leone.jpg",
+     "prompt": {
+      "it": "Il leone: in che gruppo sta?",
+      "es": "El león: ¿en qué grupo está?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Mammiferi",
+        "es": "Mamíferos"
+       }
+      },
+      {
+       "label": {
+        "it": "Uccelli",
+        "es": "Aves"
+       }
+      },
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Il leone è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El león es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_leone.jpg",
+     "prompt": {
+      "it": "Il leone: come respira?",
+      "es": "El león: ¿cómo respira?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Con i polmoni",
+        "es": "Con pulmones"
+       }
+      },
+      {
+       "label": {
+        "it": "Con le branchie",
+        "es": "Con branquias"
+       }
+      },
+      {
+       "label": {
+        "it": "Prima branchie, poi polmoni",
+        "es": "Primero branquias, después pulmones"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Il leone respira con i polmoni.",
+      "es": "El león respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_leone.jpg",
+     "prompt": {
+      "it": "Il leone: come nasce?",
+      "es": "El león: ¿cómo nace?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Oviparo",
+        "es": "Ovíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Viviparo",
+        "es": "Vivíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Ovoviviparo",
+        "es": "Ovovivíparo"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il leone cresce nella pancia della mamma: fa parte dei vivipari.",
+      "es": "El león crece en la panza de la mamá: es de los vivíparos."
+     }
+    },
+    {
+     "img": "img/an_leone.jpg",
+     "prompt": {
+      "it": "Il leone: cosa mangia?",
+      "es": "El león: ¿qué come?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Erbivoro",
+        "es": "Herbívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Carnivoro",
+        "es": "Carnívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Onnivoro",
+        "es": "Omnívoro"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "Il leone mangia carne: fa parte dei carnivori.",
+      "es": "El león come carne: es de los carnívoros."
+     }
+    }
+   ],
+   "shuffle": false
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Carta d'identità: la rana",
+    "es": "Documento: la rana"
+   },
+   "intro": {
+    "it": "Ora la rana!",
+    "es": "¡Ahora la rana!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/an_rana.jpg",
+     "prompt": {
+      "it": "La rana: ha lo scheletro interno?",
+      "es": "La rana: ¿tiene esqueleto interno?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì: è un vertebrato",
+        "es": "Sí: es un vertebrado"
+       }
+      },
+      {
+       "label": {
+        "it": "No: è un invertebrato",
+        "es": "No: es un invertebrado"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "prompt": {
+      "it": "La rana: in che gruppo sta?",
+      "es": "La rana: ¿en qué grupo está?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Mammiferi",
+        "es": "Mamíferos"
+       }
+      },
+      {
+       "label": {
+        "it": "Uccelli",
+        "es": "Aves"
+       }
+      },
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "La rana è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La rana es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "prompt": {
+      "it": "La rana: come respira?",
+      "es": "La rana: ¿cómo respira?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Con i polmoni",
+        "es": "Con pulmones"
+       }
+      },
+      {
+       "label": {
+        "it": "Con le branchie",
+        "es": "Con branquias"
+       }
+      },
+      {
+       "label": {
+        "it": "Prima branchie, poi polmoni",
+        "es": "Primero branquias, después pulmones"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "La rana prima respira con le branchie, poi con i polmoni.",
+      "es": "La rana primero respira con branquias y después con pulmones."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "prompt": {
+      "it": "La rana: come nasce?",
+      "es": "La rana: ¿cómo nace?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Oviparo",
+        "es": "Ovíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Viviparo",
+        "es": "Vivíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Ovoviviparo",
+        "es": "Ovovivíparo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La rana nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "La rana nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "prompt": {
+      "it": "La rana: cosa mangia?",
+      "es": "La rana: ¿qué come?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Erbivoro",
+        "es": "Herbívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Carnivoro",
+        "es": "Carnívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Onnivoro",
+        "es": "Omnívoro"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "La rana mangia carne: fa parte dei carnivori.",
+      "es": "La rana come carne: es de los carnívoros."
+     }
+    }
+   ],
+   "shuffle": false
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Carta d'identità: l'aquila",
+    "es": "Documento: el águila"
+   },
+   "intro": {
+    "it": "E adesso l'aquila!",
+    "es": "¡Y ahora el águila!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "img": "img/an_aquila.jpg",
+     "prompt": {
+      "it": "L'aquila: ha lo scheletro interno?",
+      "es": "El águila: ¿tiene esqueleto interno?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Sì: è un vertebrato",
+        "es": "Sí: es un vertebrado"
+       }
+      },
+      {
+       "label": {
+        "it": "No: è un invertebrato",
+        "es": "No: es un invertebrado"
+       }
+      }
+     ],
+     "answer": 0
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "prompt": {
+      "it": "L'aquila: in che gruppo sta?",
+      "es": "El águila: ¿en qué grupo está?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Mammiferi",
+        "es": "Mamíferos"
+       }
+      },
+      {
+       "label": {
+        "it": "Uccelli",
+        "es": "Aves"
+       }
+      },
+      {
+       "label": {
+        "it": "Pesci",
+        "es": "Peces"
+       }
+      },
+      {
+       "label": {
+        "it": "Anfibi",
+        "es": "Anfibios"
+       }
+      },
+      {
+       "label": {
+        "it": "Rettili",
+        "es": "Reptiles"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "L'aquila è un uccello: ha le piume, le ali e il becco.",
+      "es": "El águila es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "prompt": {
+      "it": "L'aquila: come respira?",
+      "es": "El águila: ¿cómo respira?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Con i polmoni",
+        "es": "Con pulmones"
+       }
+      },
+      {
+       "label": {
+        "it": "Con le branchie",
+        "es": "Con branquias"
+       }
+      },
+      {
+       "label": {
+        "it": "Prima branchie, poi polmoni",
+        "es": "Primero branquias, después pulmones"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "L'aquila respira con i polmoni.",
+      "es": "El águila respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "prompt": {
+      "it": "L'aquila: come nasce?",
+      "es": "El águila: ¿cómo nace?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Oviparo",
+        "es": "Ovíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Viviparo",
+        "es": "Vivíparo"
+       }
+      },
+      {
+       "label": {
+        "it": "Ovoviviparo",
+        "es": "Ovovivíparo"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "L'aquila nasce da un uovo deposto fuori: fa parte degli ovipari.",
+      "es": "El águila nace de un huevo puesto afuera: es de los ovíparos."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "prompt": {
+      "it": "L'aquila: cosa mangia?",
+      "es": "El águila: ¿qué come?"
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Erbivoro",
+        "es": "Herbívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Carnivoro",
+        "es": "Carnívoro"
+       }
+      },
+      {
+       "label": {
+        "it": "Onnivoro",
+        "es": "Omnívoro"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "L'aquila mangia carne: fa parte dei carnivori.",
+      "es": "El águila come carne: es de los carnívoros."
+     }
+    }
+   ],
+   "shuffle": false
+  },
+  {
+   "type": "pick",
+   "name": {
+    "it": "Il tuo animale",
+    "es": "Tu animal"
+   },
+   "intro": {
+    "it": "Nel compito può esserci: «Scegli un animale e descrivilo». Scegli il tuo preferito!",
+    "es": "En la prueba puede venir: «Elegí un animal y describilo». ¡Elegí tu preferido!"
+   },
+   "options": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "model": {
+      "it": [
+       "Il leone è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "Il leone respira con i polmoni.",
+       "Il leone cresce nella pancia della mamma: fa parte dei vivipari.",
+       "Il leone mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El león es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El león respira con pulmones.",
+       "El león crece en la panza de la mamá: es de los vivíparos.",
+       "El león come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "model": {
+      "it": [
+       "L'aquila è un vertebrato: ha lo scheletro interno.",
+       "È un uccello. Ha le piume, le ali e il becco.",
+       "L'aquila respira con i polmoni.",
+       "L'aquila nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "L'aquila mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El águila es un vertebrado: tiene esqueleto interno.",
+       "Es un ave. Tiene plumas, alas y pico.",
+       "El águila respira con pulmones.",
+       "El águila nace de un huevo puesto afuera: es de los ovíparos.",
+       "El águila come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "model": {
+      "it": [
+       "Il delfino è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "Il delfino vive nel mare ma respira con i polmoni: sale in superficie a prendere aria.",
+       "Il delfino cresce nella pancia della mamma: fa parte dei vivipari.",
+       "Il delfino mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El delfín es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El delfín vive en el mar pero respira con pulmones: sube a la superficie a tomar aire.",
+       "El delfín crece en la panza de la mamá: es de los vivíparos.",
+       "El delfín come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "model": {
+      "it": [
+       "Il coccodrillo è un vertebrato: ha lo scheletro interno.",
+       "È un rettile. Ha le squame dure.",
+       "Il coccodrillo respira con i polmoni.",
+       "Il coccodrillo nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "Il coccodrillo mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El cocodrilo es un vertebrado: tiene esqueleto interno.",
+       "Es un reptil. Tiene escamas duras.",
+       "El cocodrilo respira con pulmones.",
+       "El cocodrilo nace de un huevo puesto afuera: es de los ovíparos.",
+       "El cocodrilo come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "model": {
+      "it": [
+       "La rana è un vertebrato: ha lo scheletro interno.",
+       "È un anfibio. Ha la pelle umida.",
+       "La rana prima respira con le branchie, poi con i polmoni.",
+       "La rana nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "La rana mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "La rana es un vertebrado: tiene esqueleto interno.",
+       "Es un anfibio. Tiene la piel húmeda.",
+       "La rana primero respira con branquias y después con pulmones.",
+       "La rana nace de un huevo puesto afuera: es de los ovíparos.",
+       "La rana come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "model": {
+      "it": [
+       "L'orso è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "L'orso respira con i polmoni.",
+       "L'orso cresce nella pancia della mamma: fa parte dei vivipari.",
+       "L'orso mangia sia vegetali sia carne: fa parte degli onnivori."
+      ],
+      "es": [
+       "El oso es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El oso respira con pulmones.",
+       "El oso crece en la panza de la mamá: es de los vivíparos.",
+       "El oso come vegetales y carne: es de los omnívoros."
+      ]
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

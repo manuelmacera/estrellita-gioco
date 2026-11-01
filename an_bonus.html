@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bonus: altri invertebrati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "title": {
+  "it": "Bonus: <mark>altri</mark> invertebrati",
+  "es": "Bonus: <mark>otros</mark> invertebrados"
+ },
+ "parts": [
+  {
+   "type": "choice",
+   "name": {
+    "it": "Indovina chi sono",
+    "es": "Adiviná quién soy"
+   },
+   "intro": {
+    "it": "Animali del video, ma non della scheda. Indovina!",
+    "es": "Animales del video, pero no de la hoja. ¡Adiviná!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "Ho il corpo gelatinoso e trasparente, a forma di ombrello. Pungo con i tentacoli!",
+      "es": "Tengo el cuerpo gelatinoso y transparente, con forma de paraguas. ¡Pico con mis tentáculos!"
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "La medusa è un invertebrato del mare. Se ne vedi una, allontanati piano.",
+      "es": "La medusa es un invertebrado del mar. Si ves una, alejate despacio."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Se perdo un braccio, me ne cresce un altro!",
+      "es": "Si pierdo un brazo, ¡me crece otro!"
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "La stella marina è un invertebrato (un echinoderma), non un pesce.",
+      "es": "La estrella de mar es un invertebrado (un equinodermo), no un pez."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Sono tutto spine: se mi pesti, ti pungo!",
+      "es": "Estoy lleno de espinas: si me pisás, ¡te pincho!"
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 2,
+     "explain": {
+      "it": "Il riccio di mare è un invertebrato, parente della stella marina.",
+      "es": "El erizo de mar es un invertebrado, pariente de la estrella de mar."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Non mi muovo mai e sono pieno di buchi. Per tanto tempo hanno pensato che fossi una pianta!",
+      "es": "Nunca me muevo y estoy lleno de agujeros. ¡Durante mucho tiempo pensaron que era una planta!"
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 3,
+     "explain": {
+      "it": "La spugna è un animale: mangia quello che trova nell'acqua attraverso i buchi.",
+      "es": "La esponja es un animal: come lo que encuentra en el agua a través de sus agujeros."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Ho più di 10 zampe: tantissime!",
+      "es": "Tengo más de 10 patas: ¡muchísimas!"
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 4,
+     "explain": {
+      "it": "Il millepiedi non è un insetto: ha molte più di 6 zampe.",
+      "es": "El milpiés no es un insecto: tiene muchas más de 6 patas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Sono fatto di tanti piccoli polipi colorati attaccati agli scogli.",
+      "es": "Estoy hecho de muchos pólipos chiquitos de colores pegados a las rocas."
+     },
+     "options": [
+      {
+       "img": "img/an_medusa.jpg",
+       "label": {
+        "it": "Medusa",
+        "es": "Medusa"
+       }
+      },
+      {
+       "img": "img/an_stella.jpg",
+       "label": {
+        "it": "Stella marina",
+        "es": "Estrella de mar"
+       }
+      },
+      {
+       "img": "img/an_riccio.jpg",
+       "label": {
+        "it": "Riccio di mare",
+        "es": "Erizo de mar"
+       }
+      },
+      {
+       "img": "img/an_spugna.jpg",
+       "label": {
+        "it": "Spugna",
+        "es": "Esponja"
+       }
+      },
+      {
+       "img": "img/an_millepiedi.jpg",
+       "label": {
+        "it": "Millepiedi",
+        "es": "Milpiés"
+       }
+      },
+      {
+       "img": "img/an_corallo.jpg",
+       "label": {
+        "it": "Corallo",
+        "es": "Coral"
+       }
+      }
+     ],
+     "answer": 5,
+     "explain": {
+      "it": "Il corallo è fatto di animali piccolissimi: i polipi.",
+      "es": "El coral está hecho de animales chiquititos: los pólipos."
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Vero o falso",
+    "es": "Verdadero o falso"
+   },
+   "intro": {
+    "it": "Vero o falso? Pensa bene!",
+    "es": "¿Verdadero o falso? ¡Pensalo bien!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "La stella marina è un pesce.",
+      "es": "La estrella de mar es un pez."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: è un invertebrato, non ha lo scheletro interno.",
+      "es": "No: es un invertebrado, no tiene esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La medusa è un invertebrato.",
+      "es": "La medusa es un invertebrado."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha il corpo gelatinoso, senza scheletro.",
+      "es": "Sí: tiene el cuerpo gelatinoso, sin esqueleto."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La spugna è una pianta.",
+      "es": "La esponja es una planta."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: è un animale che vive attaccato agli scogli.",
+      "es": "No: es un animal que vive pegado a las rocas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il millepiedi è un insetto.",
+      "es": "El milpiés es un insecto."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: gli insetti hanno 6 zampe, il millepiedi ne ha tantissime.",
+      "es": "No: los insectos tienen 6 patas, el milpiés tiene muchísimas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il lombrico respira attraverso la pelle.",
+      "es": "La lombriz respira a través de la piel."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: la sua pelle è umida.",
+      "es": "Sí: su piel es húmeda."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Esistono calamari lunghi 14 metri.",
+      "es": "Existen calamares de 14 metros de largo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: come un palazzo di cinque piani!",
+      "es": "Sí: ¡como un edificio de cinco pisos!"
+     }
+    },
+    {
+     "prompt": {
+      "it": "Una formica può sollevare 100 volte il suo peso.",
+      "es": "Una hormiga puede levantar 100 veces su peso."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: è come se tu sollevassi quattro automobili!",
+      "es": "Sí: ¡es como si vos levantaras cuatro autos!"
+     }
+    },
+    {
+     "prompt": {
+      "it": "I lombrichi fanno bene alla terra.",
+      "es": "Las lombrices le hacen bien a la tierra."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: scavano gallerie che portano aria nel terreno.",
+      "es": "Sí: cavan túneles que llevan aire a la tierra."
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

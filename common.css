@@ -84,6 +84,9 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
 .bin.b0 { background: #fbe2dd; }
 .bin.b1 { background: #dff1e3; }
 .bin.b2 { background: #e2e8fb; }
+.bin.b3 { background: #fbf0d0; }
+.bin.b4 { background: #efe2f8; }
+.bins.many .bin h3 { font-size: 1.1rem; }
 .bin.no { animation: shake .45s ease; border-color: var(--bad); }
 .bin .mini { font-size: .9rem; font-weight: 700; background: #ffffffaa; border-radius: 10px; padding: 4px 8px; }
 .item { display: grid; grid-template-columns: minmax(0, 160px) minmax(0, 1fr); gap: 14px; align-items: center; background: var(--paper); color: var(--ink); border-radius: 16px; padding: 10px; border: 3px solid var(--ink); animation: pop .25s ease; }
@@ -124,6 +127,11 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
   .mascot { width: 68px; height: 68px; }
   .stars { margin-left: 0; }
   .bins { grid-template-columns: minmax(0, 1fr); }
+  .bins.many { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bins.many .bin { min-height: 90px; }
+}
+@media (min-width: 641px) and (max-width: 860px) {
+  .bins.many { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .opt.no, .bin.no, .chip.no, .card, .item, .mascot.jump { animation: none; }

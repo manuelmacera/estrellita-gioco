@@ -1,0 +1,2415 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prova di scienze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;800&family=Patrick+Hand&display=swap">
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<script src="common.js"></script>
+<script>
+const PAGE = {
+ "title": {
+  "it": "Prova di <mark>scienze</mark>",
+  "es": "Prueba de <mark>ciencias</mark>"
+ },
+ "parts": [
+  {
+   "type": "fill",
+   "name": {
+    "it": "Completa",
+    "es": "Completá"
+   },
+   "intro": {
+    "it": "Come nella prova: metti la parola giusta.",
+    "es": "Como en la prueba: poné la palabra correcta."
+   },
+   "items": [
+    {
+     "text": {
+      "it": "Gli animali con lo scheletro interno si chiamano ___.",
+      "es": "Los animales con esqueleto interno se llaman ___."
+     },
+     "answer": {
+      "it": "VERTEBRATI",
+      "es": "VERTEBRADOS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli animali senza scheletro interno si chiamano ___.",
+      "es": "Los animales sin esqueleto interno se llaman ___."
+     },
+     "answer": {
+      "it": "INVERTEBRATI",
+      "es": "INVERTEBRADOS"
+     }
+    },
+    {
+     "text": {
+      "it": "I pesci respirano con le ___.",
+      "es": "Los peces respiran con ___."
+     },
+     "answer": {
+      "it": "BRANCHIE",
+      "es": "BRANQUIAS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli uccelli hanno il corpo coperto di ___.",
+      "es": "Las aves tienen el cuerpo cubierto de ___."
+     },
+     "answer": {
+      "it": "PIUME",
+      "es": "PLUMAS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli insetti hanno sei ___.",
+      "es": "Los insectos tienen seis ___."
+     },
+     "answer": {
+      "it": "ZAMPE",
+      "es": "PATAS"
+     }
+    },
+    {
+     "text": {
+      "it": "Il ragno ha 8 zampe: è un ___.",
+      "es": "La araña tiene 8 patas: es un ___."
+     },
+     "answer": {
+      "it": "ARACNIDE",
+      "es": "ARÁCNIDO"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli animali che mangiano solo vegetali sono ___.",
+      "es": "Los animales que comen solo vegetales son ___."
+     },
+     "answer": {
+      "it": "ERBIVORI",
+      "es": "HERBÍVOROS"
+     }
+    },
+    {
+     "text": {
+      "it": "Gli animali che mangiano vegetali e carne sono ___.",
+      "es": "Los animales que comen vegetales y carne son ___."
+     },
+     "answer": {
+      "it": "ONNIVORI",
+      "es": "OMNÍVOROS"
+     }
+    }
+   ]
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Con o senza scheletro?",
+    "es": "¿Con o sin esqueleto?"
+   },
+   "intro": {
+    "it": "Ha lo scheletro dentro il corpo? Mettilo nella scatola giusta.",
+    "es": "¿Tiene esqueleto adentro del cuerpo? Ponelo en la caja correcta."
+   },
+   "bins": [
+    {
+     "it": "Vertebrati",
+     "es": "Vertebrados"
+    },
+    {
+     "it": "Invertebrati",
+     "es": "Invertebrados"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il leone ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El león tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "La vaca tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El gato tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El caballo tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El conejo tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El elefante tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "La jirafa tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "La ballena tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il delfino ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El delfín tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La foca ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "La foca tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El murciélago tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'orso ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El oso tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il maiale ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El cerdo tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il topo ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El ratón tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tigre ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El tigre tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El koala tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'essere umano ha lo scheletro interno: è un vertebrato (un mammifero).",
+      "es": "El ser humano tiene esqueleto interno: es un vertebrado (un mamífero)."
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'aquila ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El águila tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pinguino ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El pingüino tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gufo ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El búho tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La gallina ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "La gallina tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pappagallo ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El loro tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'anatra ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El pato tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_passerotto.jpg",
+     "label": {
+      "it": "Passerotto",
+      "es": "Gorrión"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il passerotto ha lo scheletro interno: è un vertebrato (un uccello).",
+      "es": "El gorrión tiene esqueleto interno: es un vertebrado (un ave)."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El pez tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce angelo ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El pez ángel tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Lo squalo ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El tiburón tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pesce palla ha lo scheletro interno: è un vertebrato (un pesce).",
+      "es": "El pez globo tiene esqueleto interno: es un vertebrado (un pez)."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La rana ha lo scheletro interno: è un vertebrato (un anfibio).",
+      "es": "La rana tiene esqueleto interno: es un vertebrado (un anfibio)."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La salamandra ha lo scheletro interno: è un vertebrato (un anfibio).",
+      "es": "La salamandra tiene esqueleto interno: es un vertebrado (un anfibio)."
+     }
+    },
+    {
+     "img": "img/an_girino.jpg",
+     "label": {
+      "it": "Girino",
+      "es": "Renacuajo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il girino ha lo scheletro interno: è un vertebrato (un anfibio).",
+      "es": "El renacuajo tiene esqueleto interno: es un vertebrado (un anfibio)."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coccodrillo ha lo scheletro interno: è un vertebrato (un rettile).",
+      "es": "El cocodrilo tiene esqueleto interno: es un vertebrado (un reptil)."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La lucertola ha lo scheletro interno: è un vertebrato (un rettile).",
+      "es": "La lagartija tiene esqueleto interno: es un vertebrado (un reptil)."
+     }
+    },
+    {
+     "img": "img/an_formica.jpg",
+     "label": {
+      "it": "Formica",
+      "es": "Hormiga"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La formica non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La hormiga no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "label": {
+      "it": "Ape",
+      "es": "Abeja"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'ape non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La abeja no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "label": {
+      "it": "Farfalla",
+      "es": "Mariposa"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La farfalla non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La mariposa no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_coccinella.jpg",
+     "label": {
+      "it": "Coccinella",
+      "es": "Vaquita de San Antonio"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La coccinella non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La vaquita de San Antonio no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_grillo.jpg",
+     "label": {
+      "it": "Grillo",
+      "es": "Grillo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il grillo non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "El grillo no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_mosca.jpg",
+     "label": {
+      "it": "Mosca",
+      "es": "Mosca"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La mosca non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "La mosca no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_scarabeo.jpg",
+     "label": {
+      "it": "Scarabeo",
+      "es": "Escarabajo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo scarabeo non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "El escarabajo no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_zanzara.jpg",
+     "label": {
+      "it": "Zanzara",
+      "es": "Mosquito"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La zanzara non ha lo scheletro interno: è un invertebrato (un insetto).",
+      "es": "El mosquito no tiene esqueleto interno: es un invertebrado (un insecto)."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "label": {
+      "it": "Ragno",
+      "es": "Araña"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il ragno non ha lo scheletro interno: è un invertebrato (un aracnide).",
+      "es": "La araña no tiene esqueleto interno: es un invertebrado (un arácnido)."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "label": {
+      "it": "Scorpione",
+      "es": "Escorpión"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Lo scorpione non ha lo scheletro interno: è un invertebrato (un aracnide).",
+      "es": "El escorpión no tiene esqueleto interno: es un invertebrado (un arácnido)."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "label": {
+      "it": "Granchio",
+      "es": "Cangrejo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_aragosta.jpg",
+     "label": {
+      "it": "Aragosta",
+      "es": "Langosta"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aragosta non ha lo scheletro interno: è un invertebrato (un crostaceo).",
+      "es": "La langosta no tiene esqueleto interno: es un invertebrado (un crustáceo)."
+     }
+    },
+    {
+     "img": "img/an_gambero.jpg",
+     "label": {
+      "it": "Gambero",
+      "es": "Camarón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gambero non ha lo scheletro interno: è un invertebrato (un crostaceo).",
+      "es": "El camarón no tiene esqueleto interno: es un invertebrado (un crustáceo)."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "label": {
+      "it": "Chiocciola",
+      "es": "Caracol"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La chiocciola non ha lo scheletro interno: è un invertebrato (un mollusco).",
+      "es": "El caracol no tiene esqueleto interno: es un invertebrado (un molusco)."
+     }
+    },
+    {
+     "img": "img/an_polpo.jpg",
+     "label": {
+      "it": "Polpo",
+      "es": "Pulpo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il polpo vive nel mare ma non è un pesce: ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "El pulpo vive en el mar pero no es un pez: tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "img": "img/an_calamaro.jpg",
+     "label": {
+      "it": "Calamaro",
+      "es": "Calamar"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il calamaro non ha lo scheletro interno: è un invertebrato (un mollusco).",
+      "es": "El calamar no tiene esqueleto interno: es un invertebrado (un molusco)."
+     }
+    },
+    {
+     "img": "img/an_ostrica.jpg",
+     "label": {
+      "it": "Ostrica",
+      "es": "Ostra"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'ostrica non ha lo scheletro interno: è un invertebrato (un mollusco).",
+      "es": "La ostra no tiene esqueleto interno: es un invertebrado (un molusco)."
+     }
+    },
+    {
+     "img": "img/an_lombrico.jpg",
+     "label": {
+      "it": "Lombrico",
+      "es": "Lombriz"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il lombrico non ha lo scheletro interno: è un invertebrato (un verme).",
+      "es": "La lombriz no tiene esqueleto interno: es un invertebrado (un gusano)."
+     }
+    }
+   ],
+   "sample": 10
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Le 5 famiglie",
+    "es": "Las 5 familias"
+   },
+   "intro": {
+    "it": "Metti ogni animale nella sua famiglia.",
+    "es": "Poné cada animal en su familia."
+   },
+   "bins": [
+    {
+     "it": "Mammiferi",
+     "es": "Mamíferos"
+    },
+    {
+     "it": "Uccelli",
+     "es": "Aves"
+    },
+    {
+     "it": "Pesci",
+     "es": "Peces"
+    },
+    {
+     "it": "Anfibi",
+     "es": "Anfibios"
+    },
+    {
+     "it": "Rettili",
+     "es": "Reptiles"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il leone è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El león es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_mucca.jpg",
+     "label": {
+      "it": "Mucca",
+      "es": "Vaca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mucca è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La vaca es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_gatto.jpg",
+     "label": {
+      "it": "Gatto",
+      "es": "Gato"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il gatto è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El gato es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_cavallo.jpg",
+     "label": {
+      "it": "Cavallo",
+      "es": "Caballo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il cavallo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El caballo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_coniglio.jpg",
+     "label": {
+      "it": "Coniglio",
+      "es": "Conejo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il coniglio è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El conejo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_elefante.jpg",
+     "label": {
+      "it": "Elefante",
+      "es": "Elefante"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'elefante è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El elefante es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_giraffa.jpg",
+     "label": {
+      "it": "Giraffa",
+      "es": "Jirafa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La giraffa è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "La jirafa es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_balena.jpg",
+     "label": {
+      "it": "Balena",
+      "es": "Ballena"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La balena vive nel mare, ma non è un pesce: respira con i polmoni e beve il latte della mamma. È un mammifero!",
+      "es": "La ballena vive en el mar, pero no es un pez: respira con pulmones y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il delfino vive nel mare, ma è un mammifero: respira con i polmoni e beve il latte della mamma.",
+      "es": "El delfín vive en el mar, pero es un mamífero: respira con pulmones y toma la leche de su mamá."
+     }
+    },
+    {
+     "img": "img/an_foca.jpg",
+     "label": {
+      "it": "Foca",
+      "es": "Foca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La foca nuota nel mare, ma è un mammifero: respira con i polmoni.",
+      "es": "La foca nada en el mar, pero es un mamífero: respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_pipistrello.jpg",
+     "label": {
+      "it": "Pipistrello",
+      "es": "Murciélago"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il pipistrello vola, ma non è un uccello: ha i peli e beve il latte della mamma. È un mammifero!",
+      "es": "El murciélago vuela, pero no es un ave: tiene pelos y toma la leche de su mamá. ¡Es un mamífero!"
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'orso è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El oso es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_maiale.jpg",
+     "label": {
+      "it": "Maiale",
+      "es": "Cerdo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il maiale è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El cerdo es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_topo.jpg",
+     "label": {
+      "it": "Topo",
+      "es": "Ratón"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il topo è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El ratón es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_tigre.jpg",
+     "label": {
+      "it": "Tigre",
+      "es": "Tigre"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La tigre è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El tigre es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_koala.jpg",
+     "label": {
+      "it": "Koala",
+      "es": "Koala"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il koala è un mammifero: beve il latte della mamma e respira con i polmoni.",
+      "es": "El koala es un mamífero: toma la leche de su mamá y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_bambino.jpg",
+     "label": {
+      "it": "Essere umano",
+      "es": "Ser humano"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Anche noi esseri umani siamo mammiferi!",
+      "es": "¡Nosotros, los seres humanos, también somos mamíferos!"
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aquila è un uccello: ha le piume, le ali e il becco.",
+      "es": "El águila es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pinguino.jpg",
+     "label": {
+      "it": "Pinguino",
+      "es": "Pingüino"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pinguino non vola, ma è un uccello: ha le piume, le ali e nasce da un uovo.",
+      "es": "El pingüino no vuela, pero es un ave: tiene plumas, alas y nace de un huevo."
+     }
+    },
+    {
+     "img": "img/an_gufo.jpg",
+     "label": {
+      "it": "Gufo",
+      "es": "Búho"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gufo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El búho es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_gallina.jpg",
+     "label": {
+      "it": "Gallina",
+      "es": "Gallina"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "La gallina è un uccello: ha le piume, le ali e il becco.",
+      "es": "La gallina es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pappagallo.jpg",
+     "label": {
+      "it": "Pappagallo",
+      "es": "Loro"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il pappagallo è un uccello: ha le piume, le ali e il becco.",
+      "es": "El loro es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_anatra.jpg",
+     "label": {
+      "it": "Anatra",
+      "es": "Pato"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'anatra è un uccello: ha le piume, le ali e il becco.",
+      "es": "El pato es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_passerotto.jpg",
+     "label": {
+      "it": "Passerotto",
+      "es": "Gorrión"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il passerotto è un uccello: ha le piume, le ali e il becco.",
+      "es": "El gorrión es un ave: tiene plumas, alas y pico."
+     }
+    },
+    {
+     "img": "img/an_pesce.jpg",
+     "label": {
+      "it": "Pesce",
+      "es": "Pez"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_pesceangelo.jpg",
+     "label": {
+      "it": "Pesce angelo",
+      "es": "Pez ángel"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce angelo è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez ángel es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_squalo.jpg",
+     "label": {
+      "it": "Squalo",
+      "es": "Tiburón"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Lo squalo è un pesce, non un mammifero: respira con le branchie e ha le pinne.",
+      "es": "El tiburón es un pez, no un mamífero: respira con branquias y tiene aletas."
+     }
+    },
+    {
+     "img": "img/an_pescepalla.jpg",
+     "label": {
+      "it": "Pesce palla",
+      "es": "Pez globo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il pesce palla è un pesce: ha squame e pinne e respira con le branchie.",
+      "es": "El pez globo es un pez: tiene escamas y aletas y respira con branquias."
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "La rana è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La rana es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_salamandra.jpg",
+     "label": {
+      "it": "Salamandra",
+      "es": "Salamandra"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "La salamandra è un anfibio: ha la pelle umida e i piccoli vivono in acqua.",
+      "es": "La salamandra es un anfibio: tiene la piel húmeda y sus crías viven en el agua."
+     }
+    },
+    {
+     "img": "img/an_girino.jpg",
+     "label": {
+      "it": "Girino",
+      "es": "Renacuajo"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Il girino è la rana da piccola: è un anfibio.",
+      "es": "El renacuajo es la rana de chiquita: es un anfibio."
+     }
+    },
+    {
+     "img": "img/an_tartaruga.jpg",
+     "label": {
+      "it": "Tartaruga",
+      "es": "Tortuga"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "La tartaruga ha il guscio, ma ha anche lo scheletro interno: è un rettile.",
+      "es": "La tortuga tiene caparazón, pero también tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_serpente.jpg",
+     "label": {
+      "it": "Serpente",
+      "es": "Serpiente"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il serpente non ha le zampe, ma ha lo scheletro interno: è un rettile.",
+      "es": "La serpiente no tiene patas, pero tiene esqueleto interno: es un reptil."
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il coccodrillo è un rettile: ha le squame e respira con i polmoni.",
+      "es": "El cocodrilo es un reptil: tiene escamas y respira con pulmones."
+     }
+    },
+    {
+     "img": "img/an_lucertola.jpg",
+     "label": {
+      "it": "Lucertola",
+      "es": "Lagartija"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "La lucertola è un rettile: ha le squame e respira con i polmoni.",
+      "es": "La lagartija es un reptil: tiene escamas y respira con pulmones."
+     }
+    }
+   ],
+   "sample": 10
+  },
+  {
+   "type": "sort",
+   "name": {
+    "it": "Gli invertebrati",
+    "es": "Los invertebrados"
+   },
+   "intro": {
+    "it": "In che gruppo sta?",
+    "es": "¿En qué grupo está?"
+   },
+   "bins": [
+    {
+     "it": "Insetti",
+     "es": "Insectos"
+    },
+    {
+     "it": "Crostacei",
+     "es": "Crustáceos"
+    },
+    {
+     "it": "Molluschi",
+     "es": "Moluscos"
+    },
+    {
+     "it": "Aracnidi",
+     "es": "Arácnidos"
+    },
+    {
+     "it": "Vermi",
+     "es": "Gusanos"
+    }
+   ],
+   "items": [
+    {
+     "img": "img/an_formica.jpg",
+     "label": {
+      "it": "Formica",
+      "es": "Hormiga"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La formica è un insetto: ha 6 zampe e le antenne.",
+      "es": "La hormiga es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ape.jpg",
+     "label": {
+      "it": "Ape",
+      "es": "Abeja"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "L'ape è un insetto: ha 6 zampe e le antenne.",
+      "es": "La abeja es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_farfalla.jpg",
+     "label": {
+      "it": "Farfalla",
+      "es": "Mariposa"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La farfalla è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mariposa es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_coccinella.jpg",
+     "label": {
+      "it": "Coccinella",
+      "es": "Vaquita de San Antonio"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La coccinella è un insetto: ha 6 zampe e le antenne.",
+      "es": "La vaquita de San Antonio es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_grillo.jpg",
+     "label": {
+      "it": "Grillo",
+      "es": "Grillo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Il grillo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El grillo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_mosca.jpg",
+     "label": {
+      "it": "Mosca",
+      "es": "Mosca"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La mosca è un insetto: ha 6 zampe e le antenne.",
+      "es": "La mosca es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_scarabeo.jpg",
+     "label": {
+      "it": "Scarabeo",
+      "es": "Escarabajo"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "Lo scarabeo è un insetto: ha 6 zampe e le antenne.",
+      "es": "El escarabajo es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_zanzara.jpg",
+     "label": {
+      "it": "Zanzara",
+      "es": "Mosquito"
+     },
+     "bin": 0,
+     "explain": {
+      "it": "La zanzara è un insetto: ha 6 zampe e le antenne.",
+      "es": "El mosquito es un insecto: tiene 6 patas y antenas."
+     }
+    },
+    {
+     "img": "img/an_ragno.jpg",
+     "label": {
+      "it": "Ragno",
+      "es": "Araña"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Il ragno ha 8 zampe: non è un insetto, è un aracnide.",
+      "es": "La araña tiene 8 patas: no es un insecto, es un arácnido."
+     }
+    },
+    {
+     "img": "img/an_scorpione.jpg",
+     "label": {
+      "it": "Scorpione",
+      "es": "Escorpión"
+     },
+     "bin": 3,
+     "explain": {
+      "it": "Lo scorpione è un aracnide: ha 8 zampe.",
+      "es": "El escorpión es un arácnido: tiene 8 patas."
+     }
+    },
+    {
+     "img": "img/an_granchio.jpg",
+     "label": {
+      "it": "Granchio",
+      "es": "Cangrejo"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il granchio ha un guscio duro fuori, ma niente scheletro dentro: è un crostaceo, con 10 zampe.",
+      "es": "El cangrejo tiene un caparazón duro por fuera, pero no tiene esqueleto adentro: es un crustáceo, con 10 patas."
+     }
+    },
+    {
+     "img": "img/an_aragosta.jpg",
+     "label": {
+      "it": "Aragosta",
+      "es": "Langosta"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "L'aragosta è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "La langosta es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "img": "img/an_gambero.jpg",
+     "label": {
+      "it": "Gambero",
+      "es": "Camarón"
+     },
+     "bin": 1,
+     "explain": {
+      "it": "Il gambero è un crostaceo: ha 10 zampe e un guscio duro.",
+      "es": "El camarón es un crustáceo: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "img": "img/an_chiocciola.jpg",
+     "label": {
+      "it": "Chiocciola",
+      "es": "Caracol"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "La chiocciola è un mollusco: ha il corpo molle.",
+      "es": "El caracol es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_polpo.jpg",
+     "label": {
+      "it": "Polpo",
+      "es": "Pulpo"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il polpo vive nel mare ma non è un pesce: ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "El pulpo vive en el mar pero no es un pez: tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "img": "img/an_calamaro.jpg",
+     "label": {
+      "it": "Calamaro",
+      "es": "Calamar"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "Il calamaro è un mollusco: ha il corpo molle.",
+      "es": "El calamar es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_ostrica.jpg",
+     "label": {
+      "it": "Ostrica",
+      "es": "Ostra"
+     },
+     "bin": 2,
+     "explain": {
+      "it": "L'ostrica è un mollusco: ha il corpo molle.",
+      "es": "La ostra es un molusco: tiene el cuerpo blando."
+     }
+    },
+    {
+     "img": "img/an_lombrico.jpg",
+     "label": {
+      "it": "Lombrico",
+      "es": "Lombriz"
+     },
+     "bin": 4,
+     "explain": {
+      "it": "Il lombrico è un verme: ha il corpo molle e lungo, senza zampe.",
+      "es": "La lombriz es un gusano: tiene el cuerpo blando y largo, sin patas."
+     }
+    }
+   ],
+   "sample": 8
+  },
+  {
+   "type": "order",
+   "name": {
+    "it": "La metamorfosi",
+    "es": "La metamorfosis"
+   },
+   "intro": {
+    "it": "Come diventa grande la rana? Tocca le carte in ordine.",
+    "es": "¿Cómo crece la rana? Tocá las cartas en orden."
+   },
+   "items": [
+    {
+     "img": "img/meta1_uova.jpg",
+     "label": {
+      "it": "Le uova nell'acqua",
+      "es": "Los huevos en el agua"
+     }
+    },
+    {
+     "img": "img/meta2_girino.jpg",
+     "label": {
+      "it": "Il girino",
+      "es": "El renacuajo"
+     }
+    },
+    {
+     "img": "img/meta3_zampe.jpg",
+     "label": {
+      "it": "Il girino con le zampe",
+      "es": "El renacuajo con patas"
+     }
+    },
+    {
+     "img": "img/meta4_ranocchia.jpg",
+     "label": {
+      "it": "La piccola rana con la coda",
+      "es": "La ranita con cola"
+     }
+    },
+    {
+     "img": "img/meta5_rana.jpg",
+     "label": {
+      "it": "La rana adulta",
+      "es": "La rana adulta"
+     }
+    }
+   ]
+  },
+  {
+   "type": "choice",
+   "name": {
+    "it": "Vero o falso",
+    "es": "Verdadero o falso"
+   },
+   "intro": {
+    "it": "Vero o falso? Pensa bene!",
+    "es": "¿Verdadero o falso? ¡Pensalo bien!"
+   },
+   "fixedOptions": true,
+   "items": [
+    {
+     "prompt": {
+      "it": "I vertebrati hanno lo scheletro dentro il corpo.",
+      "es": "Los vertebrados tienen el esqueleto adentro del cuerpo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: lo scheletro interno sostiene il corpo e lo aiuta a muoversi.",
+      "es": "Sí: el esqueleto interno sostiene el cuerpo y lo ayuda a moverse."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli invertebrati hanno lo scheletro interno.",
+      "es": "Los invertebrados tienen esqueleto interno."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: gli invertebrati NON hanno lo scheletro interno.",
+      "es": "No: los invertebrados NO tienen esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I vertebrati si dividono in 5 gruppi.",
+      "es": "Los vertebrados se dividen en 5 grupos."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Mammiferi, uccelli, pesci, anfibi e rettili.",
+      "es": "Mamíferos, aves, peces, anfibios y reptiles."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il granchio ha uno scheletro interno.",
+      "es": "El cangrejo tiene esqueleto interno."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: ha un guscio duro fuori che lo protegge, ma dentro non ha lo scheletro.",
+      "es": "No: tiene un caparazón duro por fuera que lo protege, pero adentro no tiene esqueleto."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli insetti sono vertebrati.",
+      "es": "Los insectos son vertebrados."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: gli insetti sono invertebrati.",
+      "es": "No: los insectos son invertebrados."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il serpente non ha lo scheletro perché non ha le zampe.",
+      "es": "La serpiente no tiene esqueleto porque no tiene patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il serpente ha una colonna vertebrale lunga e flessibile. È un vertebrato!",
+      "es": "No: la serpiente tiene una columna vertebral larga y flexible. ¡Es un vertebrado!"
+     }
+    },
+    {
+     "prompt": {
+      "it": "Anche gli invertebrati si dividono in 5 gruppi.",
+      "es": "Los invertebrados también se dividen en 5 grupos."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Insetti, crostacei, molluschi, aracnidi e vermi.",
+      "es": "Insectos, crustáceos, moluscos, arácnidos y gusanos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il pesce è un vertebrato.",
+      "es": "El pez es un vertebrado."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha uno scheletro sottile e flessibile, con la spina.",
+      "es": "Sí: tiene un esqueleto fino y flexible, con espinas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il ragno è un insetto.",
+      "es": "La araña es un insecto."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: ha 8 zampe. È un aracnide.",
+      "es": "No: tiene 8 patas. Es un arácnido."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il polpo è un pesce.",
+      "es": "El pulpo es un pez."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il polpo ha il corpo molle, senza scheletro. È un mollusco.",
+      "es": "No: el pulpo tiene el cuerpo blando, sin esqueleto. Es un molusco."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il granchio è un crostaceo.",
+      "es": "El cangrejo es un crustáceo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha 10 zampe e un guscio duro.",
+      "es": "Sí: tiene 10 patas y un caparazón duro."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il lombrico non ha zampe.",
+      "es": "La lombriz no tiene patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: si muove strisciando con i muscoli.",
+      "es": "Sí: se mueve arrastrándose con sus músculos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La chiocciola è un mollusco.",
+      "es": "El caracol es un molusco."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha il corpo molle, protetto da una conchiglia.",
+      "es": "Sí: tiene el cuerpo blando, protegido por una concha."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Alcuni invertebrati hanno un guscio duro fuori dal corpo.",
+      "es": "Algunos invertebrados tienen un caparazón duro por fuera del cuerpo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: il granchio e lo scarabeo. Li protegge, ma non è uno scheletro interno.",
+      "es": "Sí: el cangrejo y el escarabajo. Los protege, pero no es un esqueleto interno."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il gambero ha 6 zampe.",
+      "es": "El camarón tiene 6 patas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il gambero è un crostaceo e ha 10 zampe.",
+      "es": "No: el camarón es un crustáceo y tiene 10 patas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La farfalla è un insetto.",
+      "es": "La mariposa es un insecto."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: ha 6 zampe, le antenne e le ali.",
+      "es": "Sí: tiene 6 patas, antenas y alas."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La balena respira con le branchie.",
+      "es": "La ballena respira con branquias."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: la balena è un mammifero e respira con i polmoni.",
+      "es": "No: la ballena es un mamífero y respira con pulmones."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il girino respira con le branchie.",
+      "es": "El renacuajo respira con branquias."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: da piccola la rana vive in acqua e respira con le branchie.",
+      "es": "Sí: de chiquita la rana vive en el agua y respira con branquias."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Gli uccelli sono ovipari.",
+      "es": "Las aves son ovíparas."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: nascono dalle uova.",
+      "es": "Sí: nacen de huevos."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il cane è oviparo.",
+      "es": "El perro es ovíparo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: il cane è un mammifero, viviparo.",
+      "es": "No: el perro es un mamífero, vivíparo."
+     }
+    },
+    {
+     "prompt": {
+      "it": "La vipera è ovovivipara.",
+      "es": "La víbora es ovovivípara."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: l'uovo resta nella pancia della mamma.",
+      "es": "Sí: el huevo se queda en la panza de la mamá."
+     }
+    },
+    {
+     "prompt": {
+      "it": "Il pipistrello nasce da un uovo.",
+      "es": "El murciélago nace de un huevo."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: è un mammifero, cresce nella pancia della mamma.",
+      "es": "No: es un mamífero, crece en la panza de la mamá."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I pesci respirano con i polmoni.",
+      "es": "Los peces respiran con pulmones."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 1,
+     "explain": {
+      "it": "No: i pesci respirano con le branchie.",
+      "es": "No: los peces respiran con branquias."
+     }
+    },
+    {
+     "prompt": {
+      "it": "I rettili respirano con i polmoni.",
+      "es": "Los reptiles respiran con pulmones."
+     },
+     "options": [
+      {
+       "label": {
+        "it": "Vero",
+        "es": "Verdadero"
+       }
+      },
+      {
+       "label": {
+        "it": "Falso",
+        "es": "Falso"
+       }
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "it": "Sì: anche il coccodrillo e la tartaruga.",
+      "es": "Sí: también el cocodrilo y la tortuga."
+     }
+    }
+   ],
+   "sample": 8
+  },
+  {
+   "type": "model",
+   "name": {
+    "it": "Domande aperte",
+    "es": "Preguntas abiertas"
+   },
+   "intro": {
+    "it": "Leggi la domanda, prova a rispondere a voce, poi guarda cosa puoi scrivere.",
+    "es": "Leé la pregunta, probá responder en voz alta y después mirá qué podés escribir."
+   },
+   "blocks": [
+    {
+     "q": {
+      "it": "Qual è la differenza tra vertebrati e invertebrati? Fai due esempi.",
+      "es": "¿Cuál es la diferencia entre vertebrados e invertebrados? Dá dos ejemplos."
+     },
+     "lines": {
+      "it": [
+       "I vertebrati hanno lo scheletro interno,",
+       "per esempio il cane e il pesce.",
+       "Gli invertebrati non hanno lo scheletro interno,",
+       "per esempio la formica e il polpo."
+      ],
+      "es": [
+       "Los vertebrados tienen esqueleto interno,",
+       "por ejemplo el perro y el pez.",
+       "Los invertebrados no tienen esqueleto interno,",
+       "por ejemplo la hormiga y el pulpo."
+      ]
+     }
+    },
+    {
+     "q": {
+      "it": "Scrivi due animali ovipari e due vivipari.",
+      "es": "Escribí dos animales ovíparos y dos vivíparos."
+     },
+     "lines": {
+      "it": [
+       "Ovipari: la gallina e il coccodrillo.",
+       "Vivipari: la mucca e il delfino."
+      ],
+      "es": [
+       "Ovíparos: la gallina y el cocodrilo.",
+       "Vivíparos: la vaca y el delfín."
+      ]
+     }
+    },
+    {
+     "q": {
+      "it": "Come respira la rana?",
+      "es": "¿Cómo respira la rana?"
+     },
+     "lines": {
+      "it": [
+       "Da piccola (girino) vive in acqua e respira con le branchie.",
+       "Da grande vive sulla terra e respira con i polmoni."
+      ],
+      "es": [
+       "De chiquita (renacuajo) vive en el agua y respira con branquias.",
+       "De grande vive en la tierra y respira con pulmones."
+      ]
+     }
+    },
+    {
+     "q": {
+      "it": "Com'è fatto il corpo di un insetto?",
+      "es": "¿Cómo es el cuerpo de un insecto?"
+     },
+     "lines": {
+      "it": [
+       "Ha tre parti: capo, torace e addome.",
+       "Ha sei zampe, le antenne sul capo e spesso le ali."
+      ],
+      "es": [
+       "Tiene tres partes: cabeza, tórax y abdomen.",
+       "Tiene seis patas, antenas en la cabeza y muchas veces alas."
+      ]
+     }
+    },
+    {
+     "q": {
+      "it": "Scrivi un animale erbivoro, uno carnivoro e uno onnivoro.",
+      "es": "Escribí un animal herbívoro, uno carnívoro y uno omnívoro."
+     },
+     "lines": {
+      "it": [
+       "Erbivoro: il coniglio.",
+       "Carnivoro: il leone.",
+       "Onnivoro: l'orso."
+      ],
+      "es": [
+       "Herbívoro: el conejo.",
+       "Carnívoro: el león.",
+       "Omnívoro: el oso."
+      ]
+     }
+    },
+    {
+     "q": {
+      "it": "Perché il pipistrello è un mammifero e non un uccello?",
+      "es": "¿Por qué el murciélago es un mamífero y no un ave?"
+     },
+     "lines": {
+      "it": [
+       "Perché ha i peli, non le piume,",
+       "e il piccolo beve il latte della mamma."
+      ],
+      "es": [
+       "Porque tiene pelos, no plumas,",
+       "y la cría toma la leche de su mamá."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "type": "pick",
+   "name": {
+    "it": "Il tuo animale",
+    "es": "Tu animal"
+   },
+   "intro": {
+    "it": "Nel compito può esserci: «Scegli un animale e descrivilo». Scegli il tuo preferito!",
+    "es": "En la prueba puede venir: «Elegí un animal y describilo». ¡Elegí tu preferido!"
+   },
+   "options": [
+    {
+     "img": "img/an_leone.jpg",
+     "label": {
+      "it": "Leone",
+      "es": "León"
+     },
+     "model": {
+      "it": [
+       "Il leone è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "Il leone respira con i polmoni.",
+       "Il leone cresce nella pancia della mamma: fa parte dei vivipari.",
+       "Il leone mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El león es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El león respira con pulmones.",
+       "El león crece en la panza de la mamá: es de los vivíparos.",
+       "El león come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_aquila.jpg",
+     "label": {
+      "it": "Aquila",
+      "es": "Águila"
+     },
+     "model": {
+      "it": [
+       "L'aquila è un vertebrato: ha lo scheletro interno.",
+       "È un uccello. Ha le piume, le ali e il becco.",
+       "L'aquila respira con i polmoni.",
+       "L'aquila nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "L'aquila mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El águila es un vertebrado: tiene esqueleto interno.",
+       "Es un ave. Tiene plumas, alas y pico.",
+       "El águila respira con pulmones.",
+       "El águila nace de un huevo puesto afuera: es de los ovíparos.",
+       "El águila come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_delfino.jpg",
+     "label": {
+      "it": "Delfino",
+      "es": "Delfín"
+     },
+     "model": {
+      "it": [
+       "Il delfino è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "Il delfino vive nel mare ma respira con i polmoni: sale in superficie a prendere aria.",
+       "Il delfino cresce nella pancia della mamma: fa parte dei vivipari.",
+       "Il delfino mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El delfín es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El delfín vive en el mar pero respira con pulmones: sube a la superficie a tomar aire.",
+       "El delfín crece en la panza de la mamá: es de los vivíparos.",
+       "El delfín come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_coccodrillo.jpg",
+     "label": {
+      "it": "Coccodrillo",
+      "es": "Cocodrilo"
+     },
+     "model": {
+      "it": [
+       "Il coccodrillo è un vertebrato: ha lo scheletro interno.",
+       "È un rettile. Ha le squame dure.",
+       "Il coccodrillo respira con i polmoni.",
+       "Il coccodrillo nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "Il coccodrillo mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "El cocodrilo es un vertebrado: tiene esqueleto interno.",
+       "Es un reptil. Tiene escamas duras.",
+       "El cocodrilo respira con pulmones.",
+       "El cocodrilo nace de un huevo puesto afuera: es de los ovíparos.",
+       "El cocodrilo come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_rana.jpg",
+     "label": {
+      "it": "Rana",
+      "es": "Rana"
+     },
+     "model": {
+      "it": [
+       "La rana è un vertebrato: ha lo scheletro interno.",
+       "È un anfibio. Ha la pelle umida.",
+       "La rana prima respira con le branchie, poi con i polmoni.",
+       "La rana nasce da un uovo deposto fuori: fa parte degli ovipari.",
+       "La rana mangia carne: fa parte dei carnivori."
+      ],
+      "es": [
+       "La rana es un vertebrado: tiene esqueleto interno.",
+       "Es un anfibio. Tiene la piel húmeda.",
+       "La rana primero respira con branquias y después con pulmones.",
+       "La rana nace de un huevo puesto afuera: es de los ovíparos.",
+       "La rana come carne: es de los carnívoros."
+      ]
+     }
+    },
+    {
+     "img": "img/an_orso.jpg",
+     "label": {
+      "it": "Orso",
+      "es": "Oso"
+     },
+     "model": {
+      "it": [
+       "L'orso è un vertebrato: ha lo scheletro interno.",
+       "È un mammifero. Ha i peli e beve il latte della mamma.",
+       "L'orso respira con i polmoni.",
+       "L'orso cresce nella pancia della mamma: fa parte dei vivipari.",
+       "L'orso mangia sia vegetali sia carne: fa parte degli onnivori."
+      ],
+      "es": [
+       "El oso es un vertebrado: tiene esqueleto interno.",
+       "Es un mamífero. Tiene pelos y toma la leche de su mamá.",
+       "El oso respira con pulmones.",
+       "El oso crece en la panza de la mamá: es de los vivíparos.",
+       "El oso come vegetales y carne: es de los omnívoros."
+      ]
+     }
+    }
+   ]
+  }
+ ]
+};
+mountActivity(PAGE);
+</script>
+</body>
+</html>

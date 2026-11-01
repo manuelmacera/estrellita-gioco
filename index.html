@@ -43,7 +43,17 @@ const MENU = [
   { g: { it: '3 · I dinosauri', es: '3 · Los dinosaurios' }, items: [
     { href: 'ere.html', img: 'img/era3.jpg', t: { it: 'Le ere', es: 'Las eras' }, d: { it: 'Arcaica, Primaria, Secondaria...', es: 'Arcaica, Primaria, Secundaria...' } },
     { href: 'dinosauri.html', img: 'img/dino4.jpg', t: { it: 'I dinosauri', es: 'Los dinosaurios' }, d: { it: 'Attacco, difesa, cibo e il tuo preferito', es: 'Ataque, defensa, comida y tu preferido' } },
-    { href: 'estinzione.html', img: 'img/ext_meteor.jpg', t: { it: 'Dove sono finiti?', es: '¿Qué les pasó?' }, d: { it: 'Le ipotesi sulla scomparsa', es: 'Las hipótesis de la desaparición' } } ] }
+    { href: 'estinzione.html', img: 'img/ext_meteor.jpg', t: { it: 'Dove sono finiti?', es: '¿Qué les pasó?' }, d: { it: 'Le ipotesi sulla scomparsa', es: 'Las hipótesis de la desaparición' } } ] },
+  { g: { it: '4 · Gli animali', es: '4 · Los animales' }, items: [
+    { href: 'an_scheletro.html', img: 'img/an_pesce.jpg', t: { it: 'Con o senza scheletro?', es: '¿Con o sin esqueleto?' }, d: { it: 'Vertebrati e invertebrati', es: 'Vertebrados e invertebrados' } },
+    { href: 'an_mammiferi_uccelli.html', img: 'img/an_pipistrello.jpg', t: { it: 'Mammiferi e uccelli', es: 'Mamíferos y aves' }, d: { it: 'Peli, piume, latte, uova', es: 'Pelos, plumas, leche, huevos' } },
+    { href: 'an_pesci_anfibi_rettili.html', img: 'img/an_rana.jpg', t: { it: 'Pesci, anfibi e rettili', es: 'Peces, anfibios y reptiles' }, d: { it: 'Squame, pelle umida, metamorfosi', es: 'Escamas, piel húmeda, metamorfosis' } },
+    { href: 'an_invertebrati.html', img: 'img/an_granchio.jpg', t: { it: 'Gli invertebrati', es: 'Los invertebrados' }, d: { it: 'Insetti, crostacei, molluschi, aracnidi, vermi', es: 'Insectos, crustáceos, moluscos, arácnidos, gusanos' } },
+    { href: 'an_insetti.html', img: 'img/ins.jpg', t: { it: 'Gli insetti da vicino', es: 'Los insectos de cerca' }, d: { it: 'Capo, torace, addome e 6 zampe', es: 'Cabeza, tórax, abdomen y 6 patas' } },
+    { href: 'an_respirare_nascere.html', img: 'img/meta2_girino.jpg', t: { it: 'Come respirano, come nascono', es: 'Cómo respiran, cómo nacen' }, d: { it: 'Polmoni, branchie, ovipari, vivipari', es: 'Pulmones, branquias, ovíparos, vivíparos' } },
+    { href: 'an_cosa_mangiano.html', img: 'img/an_leone.jpg', t: { it: 'Cosa mangiano?', es: '¿Qué comen?' }, d: { it: "Erbivori, carnivori, onnivori e la carta d'identità", es: 'Herbívoros, carnívoros, omnívoros y el documento del animal' } },
+    { href: 'an_bonus.html', img: 'img/an_stella.jpg', t: { it: 'Bonus: altri invertebrati', es: 'Bonus: otros invertebrados' }, d: { it: 'Medusa, stella marina, spugna...', es: 'Medusa, estrella de mar, esponja...' } },
+    { href: 'an_prova.html', img: 'img/an_aquila.jpg', t: { it: 'Prova di scienze', es: 'Prueba de ciencias' }, d: { it: 'Tutto insieme, come nella prova', es: 'Todo junto, como en la prueba' } } ] }
 ];
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
