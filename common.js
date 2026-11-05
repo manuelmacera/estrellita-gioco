@@ -1,5 +1,7 @@
 /* Stellina activity engine: choice, sort, fill, order, pick and model parts, in Italian or Spanish.
-   Feedback (praise, try again, explanations) is also spoken by Stellina through voice.js when it is loaded. */
+   Feedback (praise, try again, explanations) is also spoken by Stellina through voice.js when it is loaded.
+   A page with `exam: true` is a mock test: the first attempt at each scored part counts, and the last
+   part ends with a grade (Sufficiente / Buono / Ottimo / Eccellente) from the share of first-try answers. */
 (function () {
   const UI = {
     it: {
@@ -8,7 +10,11 @@
       score: (a, b) => `${a} su ${b} al primo colpo`, again: 'Rifai', nextPart: 'Parte successiva →', menu: '← Menu',
       check: 'Controlla', first: 'prima', last: 'dopo', tapOrder: "Tocca le carte nell'ordine giusto.",
       orderWrong: n => n === 1 ? 'Una carta è al posto sbagliato: torna giù!' : `${n} carte sono al posto sbagliato: tornano giù!`,
-      bank: 'Tocca la parola giusta:', pickTitle: 'Nel compito puoi scrivere:', doneBtn: 'Fatto!', part: 'Parte'
+      bank: 'Tocca la parola giusta:', pickTitle: 'Nel compito puoi scrivere:', doneBtn: 'Fatto!', part: 'Parte',
+      grades: ['Sufficiente', 'Buono', 'Ottimo', 'Eccellente'],
+      gradeSay: ['Sufficiente. Continua ad allenarti: puoi fare ancora meglio!', 'Buono! Bel lavoro.', 'Ottimo! Bravissima!', 'Eccellente! Sei una vera scienziata!'],
+      report: 'Il tuo voto', right: (a, b) => `Giuste al primo colpo: ${a} su ${b}`, errors: n => `Errori: ${n}`,
+      missing: 'Per avere il voto completa anche:', newTest: 'Nuova prova'
     },
     es: {
       next: 'Siguiente →', retry: ['¡Probá de nuevo!', '¡Casi! Probá otra vez.', 'No es esa. ¡Probá de nuevo!'],
@@ -16,7 +22,11 @@
       score: (a, b) => `${a} de ${b} al primer intento`, again: 'Otra vez', nextPart: 'Siguiente parte →', menu: '← Menú',
       check: 'Revisar', first: 'antes', last: 'después', tapOrder: 'Tocá las cartas en el orden correcto.',
       orderWrong: n => n === 1 ? 'Una carta está en el lugar equivocado: ¡vuelve abajo!' : `${n} cartas están en el lugar equivocado: ¡vuelven abajo!`,
-      bank: 'Tocá la palabra correcta:', pickTitle: 'En la prueba podés escribir:', doneBtn: '¡Listo!', part: 'Parte'
+      bank: 'Tocá la palabra correcta:', pickTitle: 'En la prueba podés escribir:', doneBtn: '¡Listo!', part: 'Parte',
+      grades: ['Suficiente', 'Bueno', 'Muy bueno', 'Excelente'],
+      gradeSay: ['Suficiente. Seguí practicando: ¡podés hacerlo todavía mejor!', '¡Bueno! Buen trabajo.', '¡Muy bueno! ¡Bravísima!', '¡Excelente! ¡Sos una verdadera científica!'],
+      report: 'Tu nota', right: (a, b) => `Bien al primer intento: ${a} de ${b}`, errors: n => `Errores: ${n}`,
+      missing: 'Para tener la nota completá también:', newTest: 'Nueva prueba'
     }
   };
   const store = {
@@ -60,6 +70,9 @@
 
   window.mountActivity = function (PAGE) {
     const S = { lang: store.get('lang', 'it'), part: 0, stars: store.get('stars', 0), st: null };
+    // mock test: {part index: {first, total, errors}} for the first attempt at each scored part
+    const EXAM_KEY = 'exam:' + location.pathname;
+    S.exam = PAGE.exam ? store.get(EXAM_KEY, {}) : null;
     const L = o => (o && typeof o === 'object' && !Array.isArray(o) && ('it' in o || 'es' in o)) ? o[S.lang] : o;
     const U = () => UI[S.lang];
 
@@ -119,15 +132,50 @@
 
     function dots(n, i) { return `<div class="dots" aria-hidden="true">${Array.from({ length: n }, (_, k) => `<span class="${k < i ? 'done' : k === i ? 'now' : ''}"></span>`).join('')}</div>`; }
 
+    const scored = i => ['choice', 'sort', 'fill', 'order'].includes(PAGE.parts[i].type);
     function finish() {
       const st = S.st, p = PAGE.parts[S.part];
+      if (S.exam && scored(S.part) && !S.exam[S.part]) {
+        S.exam[S.part] = { first: st.first, total: st.total, errors: st.errors || 0 };
+        store.set(EXAM_KEY, S.exam);
+      }
+      const last = S.part === PAGE.parts.length - 1;
+      if (S.exam && last) return report();
       addStar(); sWin(); confetti(); jump(true);
       say(U().done, 'good'); talk(U().done);
       const hasScore = st.total > 0;
-      const nextBtn = S.part < PAGE.parts.length - 1 ? `<button type="button" class="btn" id="nextpart">${U().nextPart}</button>` : `<a class="btn" href="index.html">${U().menu}</a>`;
+      const nextBtn = !last ? `<button type="button" class="btn" id="nextpart">${U().nextPart}</button>` : `<a class="btn" href="index.html">${U().menu}</a>`;
       $('stage').innerHTML = `<div class="finish"><div class="big">★</div><h2>${U().done}</h2>${hasScore ? `<p class="prompt">${U().score(st.first, st.total)}</p>` : ''}${p.after ? `<div class="paper" style="text-align:left;justify-self:stretch">${p.after.map(b => `<p class="q">${esc(L(b.q))}</p>${L(b.lines).map(l => `<p>${esc(l)}</p>`).join('')}`).join('')}</div>` : ''}<div class="actions"><button type="button" class="btn secondary" id="again">${U().again}</button>${nextBtn}</div></div>`;
       $('again').addEventListener('click', () => startPart(S.part));
       const nb = $('nextpart'); if (nb) nb.addEventListener('click', () => startPart(S.part + 1));
+    }
+
+    function grade(pct) { return pct >= 90 ? 3 : pct >= 80 ? 2 : pct >= 70 ? 1 : 0; }
+    function report() {
+      const idx = PAGE.parts.map((_, i) => i).filter(scored);
+      const todo = idx.filter(i => !S.exam[i]);
+      S.st = { first: 0, total: 0 };
+      if (todo.length) {   // can't grade yet: send her back to what's missing
+        say(U().missing, '');
+        $('stage').innerHTML = `<div class="finish"><h2>${U().report}</h2><p class="prompt">${U().missing}</p><div class="actions">${todo.map(i => `<button type="button" class="btn secondary" data-i="${i}">${U().part} ${i + 1} · ${esc(L(PAGE.parts[i].name))}</button>`).join('')}</div></div>`;
+        $('stage').querySelectorAll('[data-i]').forEach(b => b.addEventListener('click', () => startPart(+b.dataset.i)));
+        return;
+      }
+      const sum = k => idx.reduce((a, i) => a + S.exam[i][k], 0);
+      const first = sum('first'), total = sum('total'), errors = sum('errors');
+      const pct = Math.floor(100 * first / total), g = grade(pct);   // round down: 89.8% is not yet 90%
+      addStar(); sWin(); confetti(); jump(true);
+      say(U().gradeSay[g], 'good'); talk(U().gradeSay[g]);
+      const rows = idx.map(i => { const r = S.exam[i]; return `<tr><td>${i + 1} · ${esc(L(PAGE.parts[i].name))}</td><td>${r.first}/${r.total}</td><td>${U().errors(r.errors)}</td></tr>`; }).join('');
+      $('stage').innerHTML = `<div class="finish report">
+        <p class="q">${U().report}</p>
+        <div class="grade g${g}">${U().grades[g]}</div>
+        <p class="prompt">${pct}%</p>
+        <p class="tally">${U().right(first, total)} · ${U().errors(errors)}</p>
+        <table class="parts-score"><tbody>${rows}</tbody></table>
+        <div class="actions"><button type="button" class="btn" id="newtest">${U().newTest}</button><a class="btn secondary" href="index.html">${U().menu}</a></div>
+      </div>`;
+      $('newtest').addEventListener('click', () => { S.exam = {}; store.set(EXAM_KEY, {}); startPart(0); });
     }
 
     // ---------------------------------------------------------------- choice / sort
@@ -174,7 +222,7 @@
           if (it.explain) { $('explain').hidden = false; $('explain').textContent = L(it.explain); }
           $('next').hidden = false; $('next').focus();
         } else {
-          st.wrong = true; sNo();
+          st.wrong = true; st.errors = (st.errors || 0) + 1; sNo();
           b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
           if (p.type === 'choice') b.disabled = true;
           const retry = pickOne(U().retry);
@@ -212,7 +260,7 @@
           $('stage').querySelectorAll('.chip').forEach(c => c.disabled = true);
           setTimeout(() => { st.i += 1; renderFill(p); }, 1300);
         } else {
-          st.wrong = true; sNo(); b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
+          st.wrong = true; st.errors = (st.errors || 0) + 1; sNo(); b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
           const retry = pickOne(U().retry);
           say(retry, 'bad'); talk(retry);
         }
@@ -224,7 +272,7 @@
       const n = p.items.length;
       let pool = shuffle(p.items.map((_, k) => k));
       while (pool.every((v, i) => v === i)) pool = shuffle(pool);
-      S.st = { pool, slots: Array(n).fill(null), locked: Array(n).fill(false), first: 0, total: 0, tries: 0 };
+      S.st = { pool, slots: Array(n).fill(null), locked: Array(n).fill(false), first: 0, total: n, tries: 0, errors: 0 };
       renderOrder(p);
     }
     function renderOrder(p, msg) {
@@ -250,6 +298,9 @@
       $('check').addEventListener('click', () => {
         const wrong = [];
         st.slots.forEach((k, i) => { if (k === i) st.locked[i] = true; else wrong.push(i); });
+        st.tries += 1;
+        if (st.tries === 1) st.first = n - wrong.length;   // cards right at the first check
+        st.errors += wrong.length;
         if (!wrong.length) return finish();
         sNo(); say(U().orderWrong(wrong.length), 'bad'); talk(U().orderWrong(wrong.length));
         $('stage').querySelectorAll('.slot').forEach((el, i) => { if (wrong.includes(i)) { const c = el.querySelector('.card'); if (c) c.classList.add('no'); } });
