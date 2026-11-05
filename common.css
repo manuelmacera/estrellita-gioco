@@ -119,6 +119,9 @@ h1 mark { background: var(--star); color: var(--ink); padding: 0 .25em; border-r
 /* lined paper model answers */
 .paper { background: #fffef9; color: var(--pen); border-radius: 16px; border: 3px solid var(--ink); padding: 18px 22px 22px; font: 400 clamp(1.25rem, 3vw, 1.6rem)/2.1rem var(--hand); background-image: repeating-linear-gradient(transparent 0 calc(2.1rem - 2px), var(--line) calc(2.1rem - 2px) 2.1rem); background-position: 0 14px; }
 .paper p { margin: 0; }
+.listen { float: right; display: inline-flex; align-items: center; gap: 6px; margin: -6px -8px 6px 10px; font: 600 1rem var(--display); background: var(--star); color: var(--ink); border: 3px solid var(--ink); border-radius: 999px; padding: 6px 14px; cursor: pointer; box-shadow: 0 3px 0 #0e1430; }
+.listen svg { width: 20px; height: 20px; }
+.listen:focus-visible { outline: 3px solid var(--star); outline-offset: 3px; }
 .paper .q { color: var(--ink); font: 700 1rem/1.4 var(--display); margin-bottom: 8px; background: #fffef9; }
 .finish { text-align: center; display: grid; gap: 12px; justify-items: center; }
 .finish h2 { font: 700 2rem var(--display); margin: 0; }

@@ -24,11 +24,11 @@
 
   window.Voice = {
     /* Say one line or several in a row; a new call interrupts the previous one. */
-    say(lines, l) {
+    say(lines, l, force) {   // force: she tapped "listen", so speak even with the voice off
       lang = l || lang;
       queue = [].concat(lines).filter(Boolean);
       el.pause();
-      if (on) next(); else queue = [];
+      if (on || force) next(); else queue = [];
     },
     stop() { queue = []; el.pause(); },
     /* A speaker toggle; `label` gives its name in the current language. */

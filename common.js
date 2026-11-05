@@ -10,7 +10,7 @@
       score: (a, b) => `${a} su ${b} al primo colpo`, again: 'Rifai', nextPart: 'Parte successiva →', menu: '← Menu',
       check: 'Controlla', first: 'prima', last: 'dopo', tapOrder: "Tocca le carte nell'ordine giusto.",
       orderWrong: n => n === 1 ? 'Una carta è al posto sbagliato: torna giù!' : `${n} carte sono al posto sbagliato: tornano giù!`,
-      bank: 'Tocca la parola giusta:', pickTitle: 'Nel compito puoi scrivere:', doneBtn: 'Fatto!', part: 'Parte',
+      bank: 'Tocca la parola giusta:', pickTitle: 'Nel compito puoi scrivere:', listen: 'Ascolta', doneBtn: 'Fatto!', part: 'Parte',
       grades: ['Sufficiente', 'Buono', 'Ottimo', 'Eccellente'],
       gradeSay: ['Sufficiente. Continua ad allenarti: puoi fare ancora meglio!', 'Buono! Bel lavoro.', 'Ottimo! Bravissima!', 'Eccellente! Sei una vera scienziata!'],
       report: 'Il tuo voto', right: (a, b) => `Giuste al primo colpo: ${a} su ${b}`, errors: n => `Errori: ${n}`,
@@ -22,7 +22,7 @@
       score: (a, b) => `${a} de ${b} al primer intento`, again: 'Otra vez', nextPart: 'Siguiente parte →', menu: '← Menú',
       check: 'Revisar', first: 'antes', last: 'después', tapOrder: 'Tocá las cartas en el orden correcto.',
       orderWrong: n => n === 1 ? 'Una carta está en el lugar equivocado: ¡vuelve abajo!' : `${n} cartas están en el lugar equivocado: ¡vuelven abajo!`,
-      bank: 'Tocá la palabra correcta:', pickTitle: 'En la prueba podés escribir:', doneBtn: '¡Listo!', part: 'Parte',
+      bank: 'Tocá la palabra correcta:', pickTitle: 'En la prueba podés escribir:', listen: 'Escuchá', doneBtn: '¡Listo!', part: 'Parte',
       grades: ['Suficiente', 'Bueno', 'Muy bueno', 'Excelente'],
       gradeSay: ['Suficiente. Seguí practicando: ¡podés hacerlo todavía mejor!', '¡Bueno! Buen trabajo.', '¡Muy bueno! ¡Bravísima!', '¡Excelente! ¡Sos una verdadera científica!'],
       report: 'Tu nota', right: (a, b) => `Bien al primer intento: ${a} de ${b}`, errors: n => `Errores: ${n}`,
@@ -309,6 +309,11 @@
     }
 
     // ---------------------------------------------------------------- pick (favourite) and model answers
+    // a listen button that reads a written answer, even with the voice switched off (she asked for it)
+    const SPEAKER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    const listenBtn = i => window.Voice ? `<button type="button" class="listen" data-b="${i}">${SPEAKER}<span>${U().listen}</span></button>` : '';
+    function read(lines) { if (window.Voice) Voice.say(lines, S.lang, true); }
+
     function startPick(p) {
       S.st = { first: 0, total: 0 };
       say(L(p.intro), ''); $('mascot').src = 'img/mascot.png';
@@ -317,7 +322,10 @@
         $('stage').querySelectorAll('.opt').forEach(o => o.classList.remove('ok'));
         b.classList.add('ok'); sOk(); jump(true);
         const o = p.options[+b.dataset.k];
-        $('model').innerHTML = `<div class="paper"><p class="q">${U().pickTitle}</p>${L(o.model).map(l => `<p>${esc(l)}</p>`).join('')}</div><div class="actions" style="margin-top:12px"><button type="button" class="btn" id="pdone">${U().doneBtn}</button></div>`;
+        $('model').innerHTML = `<div class="paper">${listenBtn(0)}<p class="q">${U().pickTitle}</p>${L(o.model).map(l => `<p>${esc(l)}</p>`).join('')}</div><div class="actions" style="margin-top:12px"><button type="button" class="btn" id="pdone">${U().doneBtn}</button></div>`;
+        const card = () => read([U().pickTitle, L(o.model).join(' ')]);
+        talk(U().pickTitle, L(o.model).join(' '));   // read it right away, unless the voice is off
+        const lb = $('model').querySelector('.listen'); if (lb) lb.addEventListener('click', card);
         $('pdone').addEventListener('click', finish);
         $('model').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }));
@@ -325,8 +333,12 @@
     function startModel(p) {
       S.st = { first: 0, total: 0 };
       say(L(p.intro), ''); $('mascot').src = 'img/mascot.png';
-      $('stage').innerHTML = p.blocks.map(b => `${b.img ? `<img class="pic" src="${b.img}" alt="">` : ''}<div class="paper"><p class="q">${esc(L(b.q))}</p>${L(b.lines).map(l => `<p>${esc(l)}</p>`).join('')}</div>`).join('') +
+      $('stage').innerHTML = p.blocks.map((b, i) => `${b.img ? `<img class="pic" src="${b.img}" alt="">` : ''}<div class="paper">${listenBtn(i)}<p class="q">${esc(L(b.q))}</p>${L(b.lines).map(l => `<p>${esc(l)}</p>`).join('')}</div>`).join('') +
         `<div class="actions"><button type="button" class="btn" id="mdone">${U().doneBtn}</button></div>`;
+      $('stage').querySelectorAll('.listen').forEach(btn => btn.addEventListener('click', () => {
+        const b = p.blocks[+btn.dataset.b];
+        read([L(b.q), L(b.lines).join(' ')]);   // the question, then the model answer
+      }));
       $('mdone').addEventListener('click', finish);
     }
 
