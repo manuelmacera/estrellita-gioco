@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>I paesaggi con Rondì</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="geo.css">
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div class="topbar">
+    <a class="back" id="back" href="#" hidden>← Menu</a>
+    <span class="brand" id="brand">Geografia · I paesaggi</span>
+    <span class="spacer"></span>
+    <button type="button" class="voice-btn" id="voice" aria-label="Voce di Rondì"></button>
+    <span class="stars" title="Stelline"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z" fill="#f2b33d" stroke="#3b2235" stroke-width="1.5" stroke-linejoin="round"/></svg><span id="stars-n">0</span></span>
+  </div>
+  <header class="hero">
+    <div class="mascot" id="mascot"></div>
+    <div class="hero-text">
+      <h1 id="title">I paesaggi</h1>
+      <p class="bubble" id="msg" role="status" aria-live="polite"></p>
+    </div>
+  </header>
+  <main id="stage"></main>
+</div>
+<script src="data.js"></script>
+<script src="art.js"></script>
+<script src="geo.js"></script>
+</body>
+</html>
